@@ -1,19 +1,37 @@
 import Link from 'next/link';
-import {GlobalContext} from './GlobalContext';
+import { GlobalContext } from './GlobalContext';
 
 
-function Decide(props) {
-    if(props.isLoggedIn == false){
-        return <Navigation title="Dashboard" page="/login" />
-    }
-    else {
-        if (props.isVolunteer == true){
-            return <Navigation title="Dashboard" page="/userDash" />
-        } else {
-            return <Navigation title="Dashboard" page="/orgDash" />
-        }
-    }
-}
+// function Decide(props) {
+//     if(props.state.isLoggedIn == false){
+//         return (
+//             <div>
+//                 <div>1state falseyyyy {props.state.isLoggedIn}</div>
+//                 <Navigation title="Dashboard" page="/login" />
+//             </div>
+            
+//         )
+//     }
+//     else {
+//         if (props.state.isVolunteer == true){
+//             return (
+//                 <div>
+//                     <div>2state {props.state.isLoggedIn}</div>
+//                     <Navigation title="Dashboard" page="/userDash" />
+//                 </div>
+                
+//             )
+//         } else {
+//             return (
+//                 <div>
+//                     <Navigation title="Dashboard" page="/orgDash" />
+//                     <div>3state {props.state.isLoggedIn}</div>
+//                 </div>
+                
+//             )
+//         }
+//     }
+// }
 
 const linkStyle = {
     marginRight: 15
@@ -25,13 +43,17 @@ const Navigation = props => (
     </Link>
 )
 
-const Header = (props) => {
-    const data = React.useContext(GlobalContext);
+function Header() {
+    const state = React.useContext(GlobalContext);
+    // const [state, setState] = React.useContext(GlobalContext);
+    // useEffect(() => {
+    //     <Decide title="Dashboard" state={state} />
+    // })
     return (
         <div>
             <Navigation title="Home" page="/" />
             <Navigation title="About Us" page="/aboutUs" />
-            {/* <Decide title="Dashboard" isVolunteer={data.isVolunteer} isLoggedIn={data.isLoggedIn} /> */}
+            <Navigation title="Dashboard" page={state.page} />
             <Navigation title="Opportunities" page="/opps" />
             <Navigation title="Log In" page="/login" />
         </div>
