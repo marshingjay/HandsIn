@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/index.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/opps.js"],{
 
 /***/ "./components/GlobalContext.js":
 /*!*************************************!*\
@@ -4984,21 +4984,21 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fclaremeyer%2FDocuments%2Fspring_senior%2Fsenior_design%2FhandsIn%2Ffront%2Fpages%2Findex.js!./":
-/*!*******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fclaremeyer%2FDocuments%2Fspring_senior%2Fsenior_design%2FhandsIn%2Ffront%2Fpages%2Findex.js ***!
-  \*******************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fopps&absolutePagePath=%2FUsers%2Fclaremeyer%2FDocuments%2Fspring_senior%2Fsenior_design%2FhandsIn%2Ffront%2Fpages%2Fopps.js!./":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fopps&absolutePagePath=%2FUsers%2Fclaremeyer%2FDocuments%2Fspring_senior%2Fsenior_design%2FhandsIn%2Ffront%2Fpages%2Fopps.js ***!
+  \**********************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/", function() {
-      var mod = __webpack_require__(/*! ./pages/index.js */ "./pages/index.js")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/opps", function() {
+      var mod = __webpack_require__(/*! ./pages/opps.js */ "./pages/opps.js")
       if(true) {
-        module.hot.accept(/*! ./pages/index.js */ "./pages/index.js", function() {
-          if(!next.router.components["/"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/index.js */ "./pages/index.js")
-          next.router.update("/", updatedPage)
+        module.hot.accept(/*! ./pages/opps.js */ "./pages/opps.js", function() {
+          if(!next.router.components["/opps"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/opps.js */ "./pages/opps.js")
+          next.router.update("/opps", updatedPage)
         })
       }
       return mod
@@ -10053,50 +10053,49 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
+/***/ "./pages/opps.js":
+/*!***********************!*\
+  !*** ./pages/opps.js ***!
+  \***********************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Index; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Opportunities; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_TheLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/TheLayout */ "./components/TheLayout.js");
-var _jsxFileName = "/Users/claremeyer/Documents/spring_senior/senior_design/handsIn/front/pages/index.js";
+var _jsxFileName = "/Users/claremeyer/Documents/spring_senior/senior_design/handsIn/front/pages/opps.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-// import Link from 'next/link';
 
-function Index() {
+function Opportunities() {
   return __jsx(_components_TheLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 5
     },
     __self: this
   }, __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 6
     },
     __self: this
-  }, "Hello Next.js"));
+  }, "Opportunities"));
 }
 
 /***/ }),
 
-/***/ 2:
-/*!***********************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fclaremeyer%2FDocuments%2Fspring_senior%2Fsenior_design%2FhandsIn%2Ffront%2Fpages%2Findex.js ***!
-  \***********************************************************************************************************************************************************************/
+/***/ 4:
+/*!**************************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fopps&absolutePagePath=%2FUsers%2Fclaremeyer%2FDocuments%2Fspring_senior%2Fsenior_design%2FhandsIn%2Ffront%2Fpages%2Fopps.js ***!
+  \**************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fclaremeyer%2FDocuments%2Fspring_senior%2Fsenior_design%2FhandsIn%2Ffront%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fclaremeyer%2FDocuments%2Fspring_senior%2Fsenior_design%2FhandsIn%2Ffront%2Fpages%2Findex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fopps&absolutePagePath=%2FUsers%2Fclaremeyer%2FDocuments%2Fspring_senior%2Fsenior_design%2FhandsIn%2Ffront%2Fpages%2Fopps.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fopps&absolutePagePath=%2FUsers%2Fclaremeyer%2FDocuments%2Fspring_senior%2Fsenior_design%2FhandsIn%2Ffront%2Fpages%2Fopps.js!./");
 
 
 /***/ }),
@@ -10112,5 +10111,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
-//# sourceMappingURL=index.js.map
+},[[4,"static/runtime/webpack.js"]]]);
+//# sourceMappingURL=opps.js.map
