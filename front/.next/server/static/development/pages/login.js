@@ -116,29 +116,64 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
-const defaultState = {
-  isLoggedIn: "false",
-  isVolunteer: false
-}; // const GlobalContext = React.createContext([{}, () => {}]);
 
+let reducer = (info, newInfo) => {
+  return _objectSpread({}, info, {}, newInfo);
+};
+
+const defaultState = {
+  isLoggedIn: false,
+  type: "\orgDash",
+  page: "\login"
+};
 const GlobalContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext(_objectSpread({}, defaultState));
 
 const GlobalProvider = props => {
   const {
-    0: state,
-    1: setState
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(_objectSpread({}, defaultState));
+    0: info,
+    1: setInfo
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(reducer, defaultState);
   return __jsx(GlobalContext.Provider, {
-    value: [state, setState],
+    value: {
+      info,
+      setInfo
+    },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 18
     },
     __self: undefined
   }, props.children);
 };
 
-
+ // const GlobalReducer = (state, action) => {
+//     switch (action.type) {
+//         case SET_STATES: 
+//             return {
+//                 ...state,
+//                 isLoggedIn: { ...action.AisLoggedIn },
+//                 isVolunteer: {...action.AisVolunteer }
+//             }
+//         default:
+//             return state;
+//     }
+// };
+// const UseGlobalState = () => {
+//     const [state, setState] = useContext(GlobalContext);
+//     const setTheState = ({ aisLoggedIn, aisVolunteer }) => {
+//         setState({
+//             type: SET_STATE,
+//             isLoggedIn: aisLoggedIn,
+//             isVolunteer: aisVolunteer
+//         });
+//     };
+//     return {
+//         setTheState,
+//         isLoggedIn: { ...state.isLoggedIn },
+//         isVolunteer: {...state.isVolunteer },
+//     };
+// };
+// export default UseGlobalState;
 
 /***/ }),
 
@@ -160,43 +195,33 @@ var _jsxFileName = "/Users/claremeyer/Documents/spring_senior/senior_design/hand
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-
-
-function Decide(props) {
-  if (props.isLoggedIn == false) {
-    return __jsx(Navigation, {
-      title: "Dashboard",
-      page: "/login",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 7
-      },
-      __self: this
-    });
-  } else {
-    if (props.isVolunteer == true) {
-      return __jsx(Navigation, {
-        title: "Dashboard",
-        page: "/userDash",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 11
-        },
-        __self: this
-      });
-    } else {
-      return __jsx(Navigation, {
-        title: "Dashboard",
-        page: "/orgDash",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 13
-        },
-        __self: this
-      });
-    }
-  }
-}
+ // function Decide(props) {
+//     if(props.state.isLoggedIn == false){
+//         return (
+//             <div>
+//                 <div>1state falseyyyy {props.state.isLoggedIn}</div>
+//                 <Navigation title="Dashboard" page="/login" />
+//             </div>
+//         )
+//     }
+//     else {
+//         if (props.state.isVolunteer == true){
+//             return (
+//                 <div>
+//                     <div>2state {props.state.isLoggedIn}</div>
+//                     <Navigation title="Dashboard" page="/userDash" />
+//                 </div>
+//             )
+//         } else {
+//             return (
+//                 <div>
+//                     <Navigation title="Dashboard" page="/orgDash" />
+//                     <div>3state {props.state.isLoggedIn}</div>
+//                 </div>
+//             )
+//         }
+//     }
+// }
 
 const linkStyle = {
   marginRight: 15
@@ -206,60 +231,72 @@ const Navigation = props => __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default
   href: props.page,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 23
+    lineNumber: 41
   },
   __self: undefined
 }, __jsx("a", {
   style: linkStyle,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 24
+    lineNumber: 42
   },
   __self: undefined
 }, props.title));
 
-const Header = props => {
-  const data = react__WEBPACK_IMPORTED_MODULE_0___default.a.useContext(_GlobalContext__WEBPACK_IMPORTED_MODULE_2__["GlobalContext"]);
+function Header() {
+  const state = react__WEBPACK_IMPORTED_MODULE_0___default.a.useContext(_GlobalContext__WEBPACK_IMPORTED_MODULE_2__["GlobalContext"]); // const [state, setState] = React.useContext(GlobalContext);
+  // useEffect(() => {
+  //     <Decide title="Dashboard" state={state} />
+  // })
+
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 53
     },
-    __self: undefined
+    __self: this
   }, __jsx(Navigation, {
     title: "Home",
     page: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 54
     },
-    __self: undefined
+    __self: this
   }), __jsx(Navigation, {
     title: "About Us",
     page: "/aboutUs",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 55
     },
-    __self: undefined
+    __self: this
+  }), __jsx(Navigation, {
+    title: "Dashboard",
+    page: state.page,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: this
   }), __jsx(Navigation, {
     title: "Opportunities",
     page: "/opps",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 57
     },
-    __self: undefined
+    __self: this
   }), __jsx(Navigation, {
     title: "Log In",
     page: "/login",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 58
     },
-    __self: undefined
+    __self: this
   }));
-};
+}
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
 
@@ -1989,39 +2026,156 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_TheLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/TheLayout */ "./components/TheLayout.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_GlobalContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/GlobalContext */ "./components/GlobalContext.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Header */ "./components/Header.js");
+/* harmony import */ var _components_GlobalContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/GlobalContext */ "./components/GlobalContext.js");
 var _jsxFileName = "/Users/claremeyer/Documents/spring_senior/senior_design/handsIn/front/pages/login.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
 
 
  // need this to change the isLoggedIn state of the header
 // also will change the state if isVolunteer depending on how they log in
 
+const updateLinks = state => {
+  if (state.isLoggedIn == true) {
+    state.page = state.type;
+  } else {
+    state.page = "\login";
+  }
+};
+
+function handleSubmit(state, acctType, forceUpdate) {
+  state.isLoggedIn = true;
+  state.type = acctType;
+  updateLinks(state);
+  forceUpdate();
+}
+
 const Login = () => {
-  // const [state, setState] = useContext(GlobalContext);
-  const data = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_components_GlobalContext__WEBPACK_IMPORTED_MODULE_2__["GlobalContext"]); // const {isLoggedIn, isVolunteer} = state;
-  // const [isLoggedIn, setIsLoggedIn] = useState('');
-  // const [state, setState] = useContext(GlobalContext);
+  const forceUpdate = react__WEBPACK_IMPORTED_MODULE_1___default.a.useState()[1].bind(null, {});
+  const {
+    0: email,
+    1: setEmail
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])("");
+  const {
+    0: password,
+    1: setPassword
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])("");
+  const {
+    0: acctType,
+    1: setAcctType
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])("");
+  const state = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_components_GlobalContext__WEBPACK_IMPORTED_MODULE_4__["GlobalContext"]);
+
+  function validate() {
+    return email.length > 0 && password.length > 0;
+  }
 
   return __jsx(_components_TheLayout__WEBPACK_IMPORTED_MODULE_0__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 42
     },
     __self: undefined
-  }, __jsx("p", {
+  }, __jsx("form", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 43
     },
     __self: undefined
-  }, "Login"), __jsx("p", {
+  }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["FormGroup"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 44
     },
     __self: undefined
-  }, "Here", data.isLoggedIn));
+  }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["FormControl"], {
+    autoFocus: true,
+    type: "email",
+    placeholder: "Email",
+    value: email,
+    onChange: e => setEmail(e.target.value),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46
+    },
+    __self: undefined
+  })), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: undefined
+  }, "Here", state.isLoggedIn, " ", state.page), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["FormGroup"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    },
+    __self: undefined
+  }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["FormControl"], {
+    autoFocus: true,
+    type: "password",
+    placeholder: "password",
+    value: password,
+    onChange: e => setPassword(e.target.value),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
+    },
+    __self: undefined
+  })), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["FormGroup"], {
+    onChange: e => setAcctType(e.target.value),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65
+    },
+    __self: undefined
+  }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["FormControl"], {
+    autoFocus: true,
+    type: "radio",
+    name: "acctType",
+    value: "/userDash",
+    placeholder: "Volunteer Account",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67
+    },
+    __self: undefined
+  }), __jsx("label", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73
+    },
+    __self: undefined
+  }, "Volunteer Account"), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["FormControl"], {
+    autoFocus: true,
+    type: "radio",
+    name: "acctType",
+    value: "/orgDash",
+    placeholder: "Organization Account",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 74
+    },
+    __self: undefined
+  }), __jsx("label", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 80
+    },
+    __self: undefined
+  }, "Organization Account"))), __jsx("button", {
+    onClick: () => handleSubmit(state, acctType, forceUpdate),
+    disabled: !validate(),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 84
+    },
+    __self: undefined
+  }, "Login"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Login);
@@ -2125,6 +2279,17 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-bootstrap":
+/*!**********************************!*\
+  !*** external "react-bootstrap" ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-bootstrap");
 
 /***/ }),
 
