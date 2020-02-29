@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -244,7 +244,8 @@ const Navigation = props => __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default
 }, props.title));
 
 function Header() {
-  const state = react__WEBPACK_IMPORTED_MODULE_0___default.a.useContext(_GlobalContext__WEBPACK_IMPORTED_MODULE_2__["GlobalContext"]); // const [state, setState] = React.useContext(GlobalContext);
+  const state = react__WEBPACK_IMPORTED_MODULE_0___default.a.useContext(_GlobalContext__WEBPACK_IMPORTED_MODULE_2__["GlobalContext"]);
+  state.page = "\login"; // const [state, setState] = React.useContext(GlobalContext);
   // useEffect(() => {
   //     <Decide title="Dashboard" state={state} />
   // })
@@ -252,7 +253,7 @@ function Header() {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 54
     },
     __self: this
   }, __jsx(Navigation, {
@@ -260,7 +261,7 @@ function Header() {
     page: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 55
     },
     __self: this
   }), __jsx(Navigation, {
@@ -268,7 +269,7 @@ function Header() {
     page: "/aboutUs",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 56
     },
     __self: this
   }), __jsx(Navigation, {
@@ -276,7 +277,7 @@ function Header() {
     page: state.page,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 57
     },
     __self: this
   }), __jsx(Navigation, {
@@ -284,7 +285,7 @@ function Header() {
     page: "/opps",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 58
     },
     __self: this
   }), __jsx(Navigation, {
@@ -292,7 +293,7 @@ function Header() {
     page: "/login",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 59
     },
     __self: this
   }));
@@ -2182,7 +2183,7 @@ const Login = () => {
 
 /***/ }),
 
-/***/ 7:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/login.js ***!
   \******************************/

@@ -45,6 +45,7 @@ const Navigation = props => (
 
 function Header() {
     const state = React.useContext(GlobalContext);
+    state.page="\login";
     // const [state, setState] = React.useContext(GlobalContext);
     // useEffect(() => {
     //     <Decide title="Dashboard" state={state} />

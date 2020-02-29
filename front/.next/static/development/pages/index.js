@@ -171,7 +171,8 @@ var Navigation = function Navigation(props) {
 };
 
 function Header() {
-  var state = react__WEBPACK_IMPORTED_MODULE_0___default.a.useContext(_GlobalContext__WEBPACK_IMPORTED_MODULE_2__["GlobalContext"]); // const [state, setState] = React.useContext(GlobalContext);
+  var state = react__WEBPACK_IMPORTED_MODULE_0___default.a.useContext(_GlobalContext__WEBPACK_IMPORTED_MODULE_2__["GlobalContext"]);
+  state.page = "\login"; // const [state, setState] = React.useContext(GlobalContext);
   // useEffect(() => {
   //     <Decide title="Dashboard" state={state} />
   // })
@@ -179,7 +180,7 @@ function Header() {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 54
     },
     __self: this
   }, __jsx(Navigation, {
@@ -187,7 +188,7 @@ function Header() {
     page: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 55
     },
     __self: this
   }), __jsx(Navigation, {
@@ -195,7 +196,7 @@ function Header() {
     page: "/aboutUs",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 56
     },
     __self: this
   }), __jsx(Navigation, {
@@ -203,7 +204,7 @@ function Header() {
     page: state.page,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 57
     },
     __self: this
   }), __jsx(Navigation, {
@@ -211,7 +212,7 @@ function Header() {
     page: "/opps",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 58
     },
     __self: this
   }), __jsx(Navigation, {
@@ -219,7 +220,7 @@ function Header() {
     page: "/login",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 59
     },
     __self: this
   }));
@@ -10088,7 +10089,7 @@ function Index() {
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!***********************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fclaremeyer%2FDocuments%2Fspring_senior%2Fsenior_design%2FhandsIn%2Ffront%2Fpages%2Findex.js ***!
   \***********************************************************************************************************************************************************************/
@@ -10111,5 +10112,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
