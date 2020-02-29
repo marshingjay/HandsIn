@@ -116,11 +116,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
-
-let reducer = (info, newInfo) => {
-  return _objectSpread({}, info, {}, newInfo);
-};
-
 const defaultState = {
   isLoggedIn: false,
   type: "\orgDash",
@@ -129,51 +124,17 @@ const defaultState = {
 const GlobalContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext(_objectSpread({}, defaultState));
 
 const GlobalProvider = props => {
-  const {
-    0: info,
-    1: setInfo
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(reducer, defaultState);
   return __jsx(GlobalContext.Provider, {
-    value: {
-      info,
-      setInfo
-    },
+    value: defaultState,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 14
     },
     __self: undefined
   }, props.children);
 };
 
- // const GlobalReducer = (state, action) => {
-//     switch (action.type) {
-//         case SET_STATES: 
-//             return {
-//                 ...state,
-//                 isLoggedIn: { ...action.AisLoggedIn },
-//                 isVolunteer: {...action.AisVolunteer }
-//             }
-//         default:
-//             return state;
-//     }
-// };
-// const UseGlobalState = () => {
-//     const [state, setState] = useContext(GlobalContext);
-//     const setTheState = ({ aisLoggedIn, aisVolunteer }) => {
-//         setState({
-//             type: SET_STATE,
-//             isLoggedIn: aisLoggedIn,
-//             isVolunteer: aisVolunteer
-//         });
-//     };
-//     return {
-//         setTheState,
-//         isLoggedIn: { ...state.isLoggedIn },
-//         isVolunteer: {...state.isVolunteer },
-//     };
-// };
-// export default UseGlobalState;
+
 
 /***/ }),
 

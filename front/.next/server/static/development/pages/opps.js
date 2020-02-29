@@ -116,11 +116,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
-
-let reducer = (info, newInfo) => {
-  return _objectSpread({}, info, {}, newInfo);
-};
-
 const defaultState = {
   isLoggedIn: false,
   type: "\orgDash",
@@ -129,51 +124,17 @@ const defaultState = {
 const GlobalContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext(_objectSpread({}, defaultState));
 
 const GlobalProvider = props => {
-  const {
-    0: info,
-    1: setInfo
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(reducer, defaultState);
   return __jsx(GlobalContext.Provider, {
-    value: {
-      info,
-      setInfo
-    },
+    value: defaultState,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 14
     },
     __self: undefined
   }, props.children);
 };
 
- // const GlobalReducer = (state, action) => {
-//     switch (action.type) {
-//         case SET_STATES: 
-//             return {
-//                 ...state,
-//                 isLoggedIn: { ...action.AisLoggedIn },
-//                 isVolunteer: {...action.AisVolunteer }
-//             }
-//         default:
-//             return state;
-//     }
-// };
-// const UseGlobalState = () => {
-//     const [state, setState] = useContext(GlobalContext);
-//     const setTheState = ({ aisLoggedIn, aisVolunteer }) => {
-//         setState({
-//             type: SET_STATE,
-//             isLoggedIn: aisLoggedIn,
-//             isVolunteer: aisVolunteer
-//         });
-//     };
-//     return {
-//         setTheState,
-//         isLoggedIn: { ...state.isLoggedIn },
-//         isVolunteer: {...state.isVolunteer },
-//     };
-// };
-// export default UseGlobalState;
+
 
 /***/ }),
 
@@ -195,33 +156,6 @@ var _jsxFileName = "/Users/claremeyer/Documents/spring_senior/senior_design/hand
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
- // function Decide(props) {
-//     if(props.state.isLoggedIn == false){
-//         return (
-//             <div>
-//                 <div>1state falseyyyy {props.state.isLoggedIn}</div>
-//                 <Navigation title="Dashboard" page="/login" />
-//             </div>
-//         )
-//     }
-//     else {
-//         if (props.state.isVolunteer == true){
-//             return (
-//                 <div>
-//                     <div>2state {props.state.isLoggedIn}</div>
-//                     <Navigation title="Dashboard" page="/userDash" />
-//                 </div>
-//             )
-//         } else {
-//             return (
-//                 <div>
-//                     <Navigation title="Dashboard" page="/orgDash" />
-//                     <div>3state {props.state.isLoggedIn}</div>
-//                 </div>
-//             )
-//         }
-//     }
-// }
 
 const linkStyle = {
   marginRight: 15
@@ -231,29 +165,24 @@ const Navigation = props => __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default
   href: props.page,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 41
+    lineNumber: 10
   },
   __self: undefined
 }, __jsx("a", {
   style: linkStyle,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 42
+    lineNumber: 11
   },
   __self: undefined
 }, props.title));
 
 function Header() {
   const state = react__WEBPACK_IMPORTED_MODULE_0___default.a.useContext(_GlobalContext__WEBPACK_IMPORTED_MODULE_2__["GlobalContext"]);
-  state.page = "\login"; // const [state, setState] = React.useContext(GlobalContext);
-  // useEffect(() => {
-  //     <Decide title="Dashboard" state={state} />
-  // })
-
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 19
     },
     __self: this
   }, __jsx(Navigation, {
@@ -261,7 +190,7 @@ function Header() {
     page: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 20
     },
     __self: this
   }), __jsx(Navigation, {
@@ -269,7 +198,7 @@ function Header() {
     page: "/aboutUs",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 21
     },
     __self: this
   }), __jsx(Navigation, {
@@ -277,7 +206,7 @@ function Header() {
     page: state.page,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 22
     },
     __self: this
   }), __jsx(Navigation, {
@@ -285,7 +214,7 @@ function Header() {
     page: "/opps",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 23
     },
     __self: this
   }), __jsx(Navigation, {
@@ -293,7 +222,7 @@ function Header() {
     page: "/login",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 24
     },
     __self: this
   }));
