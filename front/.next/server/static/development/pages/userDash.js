@@ -182,7 +182,7 @@ function Header() {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 18
     },
     __self: this
   }, __jsx(Navigation, {
@@ -190,7 +190,7 @@ function Header() {
     page: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 19
     },
     __self: this
   }), __jsx(Navigation, {
@@ -198,7 +198,7 @@ function Header() {
     page: "/aboutUs",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 20
     },
     __self: this
   }), __jsx(Navigation, {
@@ -206,7 +206,7 @@ function Header() {
     page: state.page,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 21
     },
     __self: this
   }), __jsx(Navigation, {
@@ -214,7 +214,7 @@ function Header() {
     page: "/opps",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 22
     },
     __self: this
   }), __jsx(Navigation, {
@@ -222,7 +222,7 @@ function Header() {
     page: "/login",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 23
     },
     __self: this
   }));

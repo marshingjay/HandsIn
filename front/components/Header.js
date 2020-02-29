@@ -14,7 +14,6 @@ const Navigation = props => (
 
 function Header() {
     const state = React.useContext(GlobalContext);
-
     return (
         <div>
             <Navigation title="Home" page="/" />
