@@ -1,9 +1,13 @@
 import Layout from '../components/TheLayout';
 import React, { useContext, useState, useCallback } from 'react';
 import { Button, FormGroup, FormControl } from 'react-bootstrap';
-import Header from '../components/Header';
+import Router from 'next/router'
 
 import {GlobalContext} from '../components/GlobalContext';
+
+const linkStyle = {
+    marginRight: 15
+}
 
 // need this to change the isLoggedIn state of the header
 // also will change the state if isVolunteer depending on how they log in
@@ -17,10 +21,14 @@ const updateLinks = (state) => {
 
 function handleSubmit(state, acctType, forceUpdate) {
     state.isLoggedIn = true;
-    state.type = acctType
+    state.type = acctType;
+    state.page = acctType;
     updateLinks(state);
 
+    
     forceUpdate();
+    
+    Router.push(state.type);
 }
 
 
@@ -35,7 +43,7 @@ const Login = () => {
     const state = useContext(GlobalContext);
 
     function validate(){
-        return email.length > 0 && password.length > 0;
+        return email.length > 0 && password.length > 0 && acctType != "";
     }
 
     return (
@@ -79,7 +87,7 @@ const Login = () => {
                         placeholder="Organization Account"
                     /><label>Organization Account</label>
                 </FormGroup>
-
+            
             </form>
             <button onClick={() => handleSubmit(state, acctType, forceUpdate)} disabled={!validate()}>Login</button>
             
