@@ -4,7 +4,7 @@ import Layout from '../components/TheLayout';
 export default function Index() {
     return (
         <Layout>
-            <p>Hello Next.js</p>
+            <p>Event Spotlight</p>
         </Layout>
     )
 }
