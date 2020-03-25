@@ -23,7 +23,7 @@ function Header() {
             <AppBar position="static">
                 <ToolBar>
                     <img src={"/static/logo.png"} alt="logo"/>
-                    <Typography variant="h4" style={{marginLeft: '25px', marginRight: '25px'}}>
+                    <Typography variant="h3" style={{marginLeft: '25px', marginRight: '25px'}}>
                         HandsIn
                     </Typography>
                     <Button
