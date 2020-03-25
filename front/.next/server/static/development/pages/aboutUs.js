@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -588,6 +588,77 @@ function Header() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
+
+/***/ }),
+
+/***/ "./components/Test.js":
+/*!****************************!*\
+  !*** ./components/Test.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return TestAPI; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/chillcilantro/Documents/KU_Year_4/Senior_Design/src/front/components/Test.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+class TestAPI extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(...args) {
+    super(...args);
+
+    _defineProperty(this, "state", {
+      loading: true,
+      person: null
+    });
+  }
+
+  async componentDidMount() {
+    const url = "https://api.randomuser.me/";
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data.results[0]);
+    this.setState({
+      person: data.results[0],
+      loading: false
+    });
+  }
+
+  render() {
+    return __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: this
+    }, this.state.loading || !this.state.person ? __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      },
+      __self: this
+    }, "loading...") : __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      },
+      __self: this
+    }, __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      },
+      __self: this
+    }, this.state.person.name.first)));
+  }
+
+}
 
 /***/ }),
 
@@ -2339,9 +2410,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _components_GridCard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/GridCard */ "./components/GridCard.js");
+/* harmony import */ var _components_Test__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Test */ "./components/Test.js");
 var _jsxFileName = "/Users/chillcilantro/Documents/KU_Year_4/Senior_Design/src/front/pages/aboutus.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -2364,7 +2437,7 @@ function Creators() {
   return __jsx(_components_TheLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 24
     },
     __self: this
   }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -2372,19 +2445,12 @@ function Creators() {
     spacing: 3,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 25
     },
     __self: this
   }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
     item: true,
     xs: 12,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: this
-  }, __jsx(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    className: classes.paper,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 26
@@ -2402,10 +2468,10 @@ function Creators() {
       lineNumber: 27
     },
     __self: this
-  }, "Welcome to HandsIn! We are a group of students at the University of Kansas that wanted to create an application to simplify the volunteering process.")))), __jsx("span", {
+  }, "Welcome to HandsIn! We are a group of students at the University of Kansas that wanted to create an application to simplify the volunteering process."))), __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 35
     },
     __self: this
   }, "\xA0\xA0"), __jsx(_components_GridCard__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -2415,17 +2481,19 @@ function Creators() {
     link: "Github",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 36
     },
     __self: this
-  }), __jsx(_components_GridCard__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    title: "Surabhi Khachar",
-    children: "Surabhi is a senior studying computer science and economics. She will be working at C2FO prior to graduating. She is a lover of running and her puppy beagle!",
-    image: "/static/surabhi.jpeg",
-    link: "Github",
+  }), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 42
+    },
+    __self: this
+  }), __jsx(_components_Test__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
     },
     __self: this
   }));
@@ -2433,7 +2501,7 @@ function Creators() {
 
 /***/ }),
 
-/***/ 6:
+/***/ 4:
 /*!********************************!*\
   !*** multi ./pages/aboutus.js ***!
   \********************************/
