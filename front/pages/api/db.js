@@ -22,9 +22,9 @@ export function newEvent(organization_id, date, location, end_time, description,
     var cur_table_params = {
         TableName: "Event"
     }
-    var event_data = queryDB({cur_table_params})
-    var last_id_str = event_data[event_data.length - 1].EventID
-    var new_id_str = last_id_str.slice(0, -1) + toString(parseInt(last_id_str.slice(-1, 0) + 1)) 
+    var event_data = queryDB({cur_table_params});
+    var last_id_str = event_data[event_data.length - 1].EventID;
+    var new_id_str = last_id_str.slice(0, -1) + toString(parseInt(last_id_str.slice(-1, 0) + 1));
     let params = {
         TableName: "Event",
         Item:{
@@ -39,8 +39,16 @@ export function newEvent(organization_id, date, location, end_time, description,
             "StartTime": start_time,
             "OrganizationID": organization_id
         }
+    };
+    createNewEntry(params);
+    return getEventByKey(new_id_str);
+}
+
+export function getAllEvents(){
+    var events_params = {
+        TableName: "Event"
     }
-    return createNewEntry(params)
+    return queryDB({cur_table_params});
 }
 
 export function getOrganizationByKey(key){
