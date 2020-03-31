@@ -1,11 +1,8 @@
 import Link from 'next/link';
 import { GlobalContext } from './GlobalContext';
-import ToolBar from '@material-ui/core/ToolBar';
-import Button from '@material-ui/core/Button';
-import AppBar from '@material-ui/core/AppBar';
-import Typography from '@material-ui/core/Typography';
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
+import Label from 'se'
 
 const linkStyle = {
     marginRight: 15
