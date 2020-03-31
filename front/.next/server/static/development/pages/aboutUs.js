@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -106,7 +106,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GlobalProvider", function() { return GlobalProvider; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/Users/claremeyer/Documents/spring_senior/senior_design/handsIn/front/components/GlobalContext.js";
+var _jsxFileName = "/Users/chillcilantro/Documents/KU_Year_4/Senior_Design/src_2/front/components/GlobalContext.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -116,11 +116,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
-
-let reducer = (info, newInfo) => {
-  return _objectSpread({}, info, {}, newInfo);
-};
-
 const defaultState = {
   isLoggedIn: false,
   type: "\orgDash",
@@ -129,51 +124,106 @@ const defaultState = {
 const GlobalContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext(_objectSpread({}, defaultState));
 
 const GlobalProvider = props => {
-  const {
-    0: info,
-    1: setInfo
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(reducer, defaultState);
   return __jsx(GlobalContext.Provider, {
-    value: {
-      info,
-      setInfo
-    },
+    value: defaultState,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 14
     },
     __self: undefined
   }, props.children);
 };
 
- // const GlobalReducer = (state, action) => {
-//     switch (action.type) {
-//         case SET_STATES: 
-//             return {
-//                 ...state,
-//                 isLoggedIn: { ...action.AisLoggedIn },
-//                 isVolunteer: {...action.AisVolunteer }
-//             }
-//         default:
-//             return state;
-//     }
-// };
-// const UseGlobalState = () => {
-//     const [state, setState] = useContext(GlobalContext);
-//     const setTheState = ({ aisLoggedIn, aisVolunteer }) => {
-//         setState({
-//             type: SET_STATE,
-//             isLoggedIn: aisLoggedIn,
-//             isVolunteer: aisVolunteer
-//         });
-//     };
-//     return {
-//         setTheState,
-//         isLoggedIn: { ...state.isLoggedIn },
-//         isVolunteer: {...state.isVolunteer },
-//     };
-// };
-// export default UseGlobalState;
+
+
+/***/ }),
+
+/***/ "./components/GridCard_2.js":
+/*!**********************************!*\
+  !*** ./components/GridCard_2.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap/Card */ "react-bootstrap/Card");
+/* harmony import */ var react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/Button */ "react-bootstrap/Button");
+/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/chillcilantro/Documents/KU_Year_4/Senior_Design/src_2/front/components/GridCard_2.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+function GridCard(props) {
+  return __jsx(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    border: "dark",
+    style: ({
+      width: '10rem'
+    }, {
+      height: '40rem'
+    }),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  }, __jsx(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_1___default.a.Img, {
+    width: "25%",
+    top: true,
+    height: "50%",
+    src: props.imgSrc,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: this
+  }), __jsx(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_1___default.a.Body, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: this
+  }, __jsx(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_1___default.a.Title, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }, props.title), __jsx(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_1___default.a.Text, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }, props.bio)), __jsx(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_1___default.a.Footer, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }, __jsx(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    variant: "light",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }, __jsx("small", {
+    className: "text-muted",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }, props.footerText))));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (GridCard);
 
 /***/ }),
 
@@ -191,37 +241,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _GlobalContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./GlobalContext */ "./components/GlobalContext.js");
-var _jsxFileName = "/Users/claremeyer/Documents/spring_senior/senior_design/handsIn/front/components/Header.js";
+/* harmony import */ var _material_ui_core_ToolBar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/ToolBar */ "@material-ui/core/ToolBar");
+/* harmony import */ var _material_ui_core_ToolBar__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_ToolBar__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/AppBar */ "@material-ui/core/AppBar");
+/* harmony import */ var _material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-bootstrap/Navbar */ "react-bootstrap/Navbar");
+/* harmony import */ var react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-bootstrap/Nav */ "react-bootstrap/Nav");
+/* harmony import */ var react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_8__);
+var _jsxFileName = "/Users/chillcilantro/Documents/KU_Year_4/Senior_Design/src_2/front/components/Header.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
- // function Decide(props) {
-//     if(props.state.isLoggedIn == false){
-//         return (
-//             <div>
-//                 <div>1state falseyyyy {props.state.isLoggedIn}</div>
-//                 <Navigation title="Dashboard" page="/login" />
-//             </div>
-//         )
-//     }
-//     else {
-//         if (props.state.isVolunteer == true){
-//             return (
-//                 <div>
-//                     <div>2state {props.state.isLoggedIn}</div>
-//                     <Navigation title="Dashboard" page="/userDash" />
-//                 </div>
-//             )
-//         } else {
-//             return (
-//                 <div>
-//                     <Navigation title="Dashboard" page="/orgDash" />
-//                     <div>3state {props.state.isLoggedIn}</div>
-//                 </div>
-//             )
-//         }
-//     }
-// }
+
+
+
+
+
+
 
 const linkStyle = {
   marginRight: 15
@@ -231,72 +272,141 @@ const Navigation = props => __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default
   href: props.page,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 41
+    lineNumber: 15
   },
   __self: undefined
 }, __jsx("a", {
   style: linkStyle,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 42
+    lineNumber: 16
   },
   __self: undefined
 }, props.title));
 
 function Header() {
   const state = react__WEBPACK_IMPORTED_MODULE_0___default.a.useContext(_GlobalContext__WEBPACK_IMPORTED_MODULE_2__["GlobalContext"]);
-  state.page = "\login"; // const [state, setState] = React.useContext(GlobalContext);
-  // useEffect(() => {
-  //     <Decide title="Dashboard" state={state} />
-  // })
-
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 24
     },
     __self: this
-  }, __jsx(Navigation, {
-    title: "Home",
-    page: "/",
+  }, __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_7___default.a, {
+    bg: "dark",
+    variant: "dark",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 25
     },
     __self: this
-  }), __jsx(Navigation, {
-    title: "About Us",
-    page: "/aboutUs",
+  }, __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_7___default.a.Brand, {
+    href: "#home",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 26
     },
     __self: this
-  }), __jsx(Navigation, {
-    title: "Dashboard",
-    page: state.page,
+  }, __jsx("img", {
+    alt: "",
+    src: "../static/logo.PNG",
+    width: "30",
+    height: "30",
+    className: "d-inline-block align-top",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 27
     },
     __self: this
-  }), __jsx(Navigation, {
-    title: "Opportunities",
-    page: "/opps",
+  }), ' ', "HandsIn"), __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_8___default.a, {
+    className: "mr-auto",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 36
     },
     __self: this
-  }), __jsx(Navigation, {
-    title: "Log In",
-    page: "/login",
+  }, __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_8___default.a.Link, {
+    href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 37
     },
     __self: this
-  }));
+  }, "Home"), __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_8___default.a.Link, {
+    href: state.page,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38
+    },
+    __self: this
+  }, "Dashboard"), __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_8___default.a.Link, {
+    href: "/opps",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39
+    },
+    __self: this
+  }, "Opportunities"), __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_8___default.a.Link, {
+    href: "/login",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40
+    },
+    __self: this
+  }, "Login"), __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_8___default.a.Link, {
+    href: "/aboutus",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: this
+  }, "About Us")))) // <div style = {{width:"110%"}}>
+  //     <title>HandsIn</title>
+  //     <AppBar position="static">
+  //         <ToolBar>
+  //             <img src={"/static/logo.png"} alt="logo"/>
+  //             <Typography variant="h3" style={{marginLeft: '25px', marginRight: '25px'}}>
+  //                 HandsIn
+  //             </Typography>
+  //             <Button
+  //                 href="/"
+  //                 variant="contained"
+  //                 color="primary"
+  //                 style={{color: '#FFF', marginLeft: '15px'}}>
+  //                     Home
+  //             </Button>
+  //             <Button
+  //                 href="/aboutus"
+  //                 variant="contained"
+  //                 color="primary"
+  //                 style={{color: '#FFF', marginLeft: '15px'}}>
+  //                     About Us
+  //             </Button>
+  //             <Button
+  //                 href={state.page}
+  //                 variant="contained"
+  //                 color="primary"
+  //                 style={{color: '#FFF', marginLeft: '15px'}}>
+  //                     Dashboard
+  //             </Button>
+  //             <Button
+  //                 href="/opps"
+  //                 variant="contained"
+  //                 color="primary"
+  //                 style={{color: '#FFF', marginLeft: '15px'}}>
+  //                     Opportunities
+  //             </Button>
+  //             <Button
+  //                 href="/login"
+  //                 variant="contained"
+  //                 color="primary"
+  //                 style={{color: '#FFF', marginLeft: '15px'}}>
+  //                     Login
+  //             </Button>
+  //         </ToolBar>
+  //     </AppBar>
+  // </div>
+  ;
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
@@ -315,30 +425,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/claremeyer/Documents/spring_senior/senior_design/handsIn/front/components/TheLayout.js";
+var _jsxFileName = "/Users/chillcilantro/Documents/KU_Year_4/Senior_Design/src_2/front/components/TheLayout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
-const layoutStyle = {
-  margin: 12,
-  padding: 12,
-  border: '1px solid #DDD'
+const style = {
+  layout: {
+    margin: 12,
+    padding: 12 // border: '1px solid #DDD'
+
+  },
+  appBar: {
+    margin: -10,
+    padding: 0
+  }
 };
 
 const Layout = props => __jsx("div", {
-  style: layoutStyle,
+  style: style.appBar,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 11
+    lineNumber: 17
   },
   __self: undefined
 }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_0__["default"], {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 12
+    lineNumber: 18
   },
   __self: undefined
-}), props.children);
+}), __jsx("div", {
+  style: style.layout,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 19
+  },
+  __self: undefined
+}, props.children));
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
 
@@ -2015,9 +2138,9 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
-/***/ "./pages/aboutUs.js":
+/***/ "./pages/aboutus.js":
 /*!**************************!*\
-  !*** ./pages/aboutUs.js ***!
+  !*** ./pages/aboutus.js ***!
   \**************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -2028,37 +2151,239 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_TheLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/TheLayout */ "./components/TheLayout.js");
-var _jsxFileName = "/Users/claremeyer/Documents/spring_senior/senior_design/handsIn/front/pages/aboutUs.js";
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _components_GridCard_2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/GridCard_2 */ "./components/GridCard_2.js");
+/* harmony import */ var react_bootstrap_CardDeck__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap/CardDeck */ "react-bootstrap/CardDeck");
+/* harmony import */ var react_bootstrap_CardDeck__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_CardDeck__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_bootstrap_Jumbotron__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-bootstrap/Jumbotron */ "react-bootstrap/Jumbotron");
+/* harmony import */ var react_bootstrap_Jumbotron__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Jumbotron__WEBPACK_IMPORTED_MODULE_7__);
+var _jsxFileName = "/Users/chillcilantro/Documents/KU_Year_4/Senior_Design/src_2/front/pages/aboutus.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
+
+
+
+
+
+
 function Creators() {
+  // const classes = useStyles();
   return __jsx(_components_TheLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 12
     },
     __self: this
-  }, __jsx("p", {
+  }, __jsx(react_bootstrap_Jumbotron__WEBPACK_IMPORTED_MODULE_7___default.a, {
+    style: {
+      backgroundImage: "../static/clare.jpeg"
+    },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 13
     },
     __self: this
-  }, "This will be about us"));
+  }, __jsx("h1", {
+    align: "center",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }, "About HandsIn"), __jsx("h6", {
+    align: "center",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    variant: "h6",
+    style: {
+      marginLeft: '25px',
+      marginRight: '25px'
+    },
+    textalign: "center",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }, "Welcome to HandsIn! We are a group of students at the University of Kansas that wanted to create an application to simplify the volunteering process. Our mission is to make it easier for people and organizations to access volunteer opportunities."))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    container: true,
+    spacing: 3,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    item: true,
+    xs: 12,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: this
+  })), __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: this
+  }, "\xA0\xA0"), __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: this
+  }, "\xA0\xA0"), __jsx(react_bootstrap_CardDeck__WEBPACK_IMPORTED_MODULE_6___default.a, {
+    style: ({
+      maxWidth: '95%'
+    }, {
+      align: 'center'
+    }),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
+    },
+    __self: this
+  }, __jsx(_components_GridCard_2__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    title: "Clare Meyer",
+    imgSrc: "../static/clare.jpeg",
+    bio: "Clare is a senior at KU with a passion for front end development. After graduation she plans to work for Capital One in New York City.",
+    footerText: "Github",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32
+    },
+    __self: this
+  }), __jsx(_components_GridCard_2__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    title: "Surabhi Khachar",
+    imgSrc: "../static/surabhi.jpeg",
+    bio: "Surabhi is a senior studying computer science and economics. She will be working at C2FO prior to graduating. She is a lover of running and her puppy beagle!",
+    footerText: "Github",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: this
+  }), __jsx(_components_GridCard_2__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    title: "Annika Kuhnke",
+    imgSrc: "../static/annika.jpeg",
+    bio: "Annika is a senior at KU with hundreds of hours of volunteer experience to bring to this project. After graduating with a BS in Computer Science, she plans to get her MS at KU as well.",
+    footerText: "Github",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
+    },
+    __self: this
+  }), __jsx(_components_GridCard_2__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    title: "Jacob Marshall",
+    imgSrc: "../static/jacob.jpeg",
+    bio: "Jacob is a senior at KU interested in novel research and the application of software to studying financial markets. He is currently a member of KU's Padlock Security Lab and studies sensor vulnerabilities in UAVs.",
+    footerText: "Github",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40
+    },
+    __self: this
+  }), __jsx(_components_GridCard_2__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    title: "Tanner Cronister",
+    imgSrc: "../static/tanner.jpeg",
+    bio: "Tanner is a senior studying computer science. He has an interest in healthcare, and will be working for Cerner upon graduation.",
+    footerText: "Github",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: this
+  })));
 }
 
 /***/ }),
 
-/***/ 7:
+/***/ 4:
 /*!********************************!*\
-  !*** multi ./pages/aboutUs.js ***!
+  !*** multi ./pages/aboutus.js ***!
   \********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/claremeyer/Documents/spring_senior/senior_design/handsIn/front/pages/aboutUs.js */"./pages/aboutUs.js");
+module.exports = __webpack_require__(/*! /Users/chillcilantro/Documents/KU_Year_4/Senior_Design/src_2/front/pages/aboutus.js */"./pages/aboutus.js");
 
+
+/***/ }),
+
+/***/ "@material-ui/core/AppBar":
+/*!*******************************************!*\
+  !*** external "@material-ui/core/AppBar" ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/AppBar");
+
+/***/ }),
+
+/***/ "@material-ui/core/Button":
+/*!*******************************************!*\
+  !*** external "@material-ui/core/Button" ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Button");
+
+/***/ }),
+
+/***/ "@material-ui/core/Grid":
+/*!*****************************************!*\
+  !*** external "@material-ui/core/Grid" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Grid");
+
+/***/ }),
+
+/***/ "@material-ui/core/ToolBar":
+/*!********************************************!*\
+  !*** external "@material-ui/core/ToolBar" ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/ToolBar");
+
+/***/ }),
+
+/***/ "@material-ui/core/Typography":
+/*!***********************************************!*\
+  !*** external "@material-ui/core/Typography" ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Typography");
+
+/***/ }),
+
+/***/ "@material-ui/core/styles":
+/*!*******************************************!*\
+  !*** external "@material-ui/core/styles" ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/styles");
 
 /***/ }),
 
@@ -2150,6 +2475,72 @@ module.exports = require("react");
 
 /***/ }),
 
+/***/ "react-bootstrap/Button":
+/*!*****************************************!*\
+  !*** external "react-bootstrap/Button" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-bootstrap/Button");
+
+/***/ }),
+
+/***/ "react-bootstrap/Card":
+/*!***************************************!*\
+  !*** external "react-bootstrap/Card" ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-bootstrap/Card");
+
+/***/ }),
+
+/***/ "react-bootstrap/CardDeck":
+/*!*******************************************!*\
+  !*** external "react-bootstrap/CardDeck" ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-bootstrap/CardDeck");
+
+/***/ }),
+
+/***/ "react-bootstrap/Jumbotron":
+/*!********************************************!*\
+  !*** external "react-bootstrap/Jumbotron" ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-bootstrap/Jumbotron");
+
+/***/ }),
+
+/***/ "react-bootstrap/Nav":
+/*!**************************************!*\
+  !*** external "react-bootstrap/Nav" ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-bootstrap/Nav");
+
+/***/ }),
+
+/***/ "react-bootstrap/Navbar":
+/*!*****************************************!*\
+  !*** external "react-bootstrap/Navbar" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-bootstrap/Navbar");
+
+/***/ }),
+
 /***/ "react-is":
 /*!***************************!*\
   !*** external "react-is" ***!
@@ -2173,4 +2564,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=aboutUs.js.map
+//# sourceMappingURL=aboutus.js.map
