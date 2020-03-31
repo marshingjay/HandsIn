@@ -1,3 +1,4 @@
+
 var AWS = require('aws-sdk');
 
 AWS.config.update({
@@ -6,7 +7,11 @@ AWS.config.update({
     "secretAccessKey": "" //PASTE YOUR SECRET KEY HERE
 });
 
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
 var docClient = new AWS.DynamoDB.DocumentClient();
+
+
 
 export function getVolunteerByKey(key){
     let params = {
@@ -18,7 +23,7 @@ export function getVolunteerByKey(key){
     return getDBdata(params);
 }
 
-export function newEvent(organization_id, date, location, end_time, description, event_name, max_volunteers, start_time){
+function newEvent(organization_id, date, location, end_time, description, event_name, max_volunteers, start_time){
     var cur_table_params = {
         TableName: "Event"
     }
@@ -44,31 +49,16 @@ export function newEvent(organization_id, date, location, end_time, description,
     return getEventByKey(new_id_str);
 }
 
-export function getAllEvents(){
-    var events_params = {
-        TableName: "Event"
-    }
-    return queryDB({cur_table_params});
-}
-
 export function getOrganizationByKey(key){
+    
     let params = {
         TableName: "Organization",
         Key: {
             Username: key
         }
     };
-    return getDBdata(params);
-}
-
-export function getReviewByKey(key){
-    let params = {
-        TableName: "Review",
-        Key: {
-            ReviewID: key
-        }
-    };
-    return getDBdata(params);
+    let my_data = getDBdata(params);
+    return my_data;
 }
 
 export function getEventByKey(key){
@@ -81,48 +71,15 @@ export function getEventByKey(key){
     return getDBdata(params);
 }
 
-function getDBdata(params){
-    let my_data = docClient.get(params, function (err, data) {
+
+async function getDBdata(params){
+    let my_data = await docClient.get(params, function (err, data) {
         if (err) {
-            console.log(err);
-            handleError(err, res);
+            console.log('error fetching db data');
         }
-        else {
-            handleSuccess(data.Item, res);
+        else{
+            console.log('feching db data was succesful');
         }
     });
-    return my_data;
+    return await my_data.promise();
 };
-
-
-function queryDB(params){
-    let my_data = docClient.query(params, function(err, data){
-        if (err) {
-            console.log(err);
-            handleError(err, res);
-        }
-        else {
-            handleSuccess(data.Item, res);
-        }
-    });
-}
-
-function createNewEntry(param){
-    docClient.put(params, function(err, data) {
-        if (err) {
-            console.log(err);
-            handleError(err, res);
-        }
-        else {
-            handleSuccess(data.Item, res);
-        }
-    });
-}
-
-function handleError(err, res) {
-    res.json({ 'message': 'server side error', statusCode: 500, error: err });
-}
-
-function handleSuccess(data, res) {
-    res.json({ message: 'success', statusCode: 200, data: data});
-}
