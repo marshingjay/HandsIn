@@ -5,7 +5,7 @@ const style = {
     layout: {
         margin: 12,
         padding: 12,
-        border: '1px solid #DDD'
+        // border: '1px solid #DDD'
     },
     appBar: {
         margin: -10,
