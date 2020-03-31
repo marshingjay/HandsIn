@@ -7,8 +7,6 @@ AWS.config.update({
     "secretAccessKey": "" //PASTE YOUR SECRET KEY HERE
 });
 
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
 var docClient = new AWS.DynamoDB.DocumentClient();
 
 
