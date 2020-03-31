@@ -21,7 +21,7 @@ async componentDidMount() {
        ) : (
        <div>
          <div>
-           {this.state.person.name.first}
+           {/* {this.state.person.name.first} */}
            </div>
        </div>
        )}
