@@ -6,17 +6,6 @@ import GridCard from '../components/GridCard_2'
 import CardDeck from 'react-bootstrap/CardDeck'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 
-// const useStyles = makeStyles(theme => ({
-//     root: {
-//       flexGrow: 1
-//     },
-//     paper: {
-//       padding: theme.spacing(2),
-//       textAlign: "center",
-//       color: theme.palette.text.primary
-//     }
-//   }));
-
 export default function Creators() {
     // const classes = useStyles();
     return (
@@ -47,9 +36,7 @@ export default function Creators() {
              footerText = "Github"/>
             <GridCard title = "Annika Kuhnke" imgSrc = "../static/annika.jpeg" bio = "Annika is a senior at KU with hundreds of hours of volunteer experience to bring to this project. After graduating with a BS in Computer Science, she plans to get her MS at KU as well." 
           footerText = "Github"/>
-          {/* </CardDeck>
-          <span>&nbsp;&nbsp;</span> 
-          <CardDeck style={{maxWidth: '50%'}}> */}
+
           <GridCard title = "Jacob Marshall" imgSrc = "../static/jacob.jpeg" bio = "Jacob is a senior at KU interested in novel research and the application of software to studying financial markets. He is currently a member of KU's Padlock Security Lab and studies sensor vulnerabilities in UAVs." 
           footerText = "Github"/>
           <GridCard title = "Tanner Cronister" imgSrc = "../static/tanner.jpeg" bio = "Tanner is a senior studying computer science. He has an interest in healthcare, and will be working for Cerner upon graduation." 

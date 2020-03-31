@@ -4797,7 +4797,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      (0, _sourceMapSupport.rewriteStacktrace)(error, "/Users/chillcilantro/Documents/KU_Year_4/Senior_Design/src/front/.next");
+      (0, _sourceMapSupport.rewriteStacktrace)(error, "/Users/chillcilantro/Documents/KU_Year_4/Senior_Design/src_2/front/.next");
       return error;
     }
   };
