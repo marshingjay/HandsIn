@@ -39,26 +39,22 @@ import FormGroup from "@material-ui/core/FormGroup";
 import Switch from "@material-ui/core/Switch";
 import { FormControlLabel, FormControl } from "@material-ui/core";
 import { Card } from "@material-ui/core";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
 
 const moment = require("moment");
-
-function onSelect(value) {
-    // this.setState({
-    //     selectedDay: value
-    //     // startDate: this.state.selectedDay.setHours(0, 0, 0),
-    //     // endDate: this.state.selectedDay.setHours(23, 59, 59)
-    // });
-    // console.log(this.state.stateDate);
-    console.log("select", "going to do something better");
-}
 
 export default class OrgDash extends React.Component {
     constructor(props) {
         super(props);
 
+        this.sideBar = this.sideBar.bind(this);
+
         this.state = {
             events: [],
-            showEvents: [],
+            showEvents: ["this"],
             calApiLoaded: false,
             clientId:
                 "60291392559-qspqkpli4v31ll0a68lc7sd59hm89n8m.apps.googleusercontent.com",
@@ -71,7 +67,6 @@ export default class OrgDash extends React.Component {
     }
 
     changeDate(value) {
-        console.log("vale");
         this.setState({ selectedDay: value, showEvents: [] }, () => {
             this.getEventsFromSelection();
         });
@@ -80,17 +75,20 @@ export default class OrgDash extends React.Component {
     getEventsFromSelection() {
         var holdList = [];
         this.state.events.map(event => {
-            if (
-                this.state.selectedDay.format().substring(0, 10) >=
-                    event.start.substring(0, 10) &&
-                this.state.selectedDay.format().substring(0, 10) <=
-                    event.end.substring(0, 10)
-            ) {
-                holdList.push(event);
+            var sDay = this.state.selectedDay.format().substring(0, 10);
+            var start = event.start.substring(0, 10);
+            if (event.end == undefined) {
+                if (sDay == start) {
+                    holdList.push(event);
+                }
+            } else {
+                var end = event.end.substring(0, 10);
+                if (sDay >= start && sDay <= end) {
+                    holdList.push(event);
+                }
             }
         });
         this.setState({ showEvents: holdList });
-        console.log(holdList);
     }
 
     componentDidMount() {
@@ -173,29 +171,19 @@ export default class OrgDash extends React.Component {
     // };
 
     onChange(e) {
-        // this.setState({ selectedDay: e });
-        // console.log(e.target.getAttribute("id"));
         const calId = event.target.getAttribute("id");
         let eventList = this.state.events.slice(0);
-        // const calIds = Object.assign({}, this.state.calIds);
-        // console.log(this.state.selectedDay.startOf("day").toISOString());
-        // console.log(this.state.selectedDay.endOf("day"));
         if (event.target.checked) {
             // Add events from this calendar
             // calIds[calId] = true;
             gapi.client.calendar.events
                 .list({
                     calendarId: calId
-                    // timeMin: this.state.selectedDay
-                    //     .startOf("day")
-                    //     .toISOString(),
-                    // timeMax: this.state.selectedDay.endOf("day").toISOString()
                 })
                 .then(resp => {
                     const events = resp.result.items;
                     for (let i = 0; i < events.length; ++i) {
                         eventList.push(this.getEventProps(events[i], calId));
-                        // console.log("THIS", events[i].start.dateTime);
                     }
                     this.setState({
                         events: eventList
@@ -211,7 +199,6 @@ export default class OrgDash extends React.Component {
                 // calIds: calIds
             });
         }
-        // console.log(this.state.events);
     }
 
     auth(ev) {
@@ -295,6 +282,18 @@ export default class OrgDash extends React.Component {
         }
     }
 
+    sideBar() {
+        var eventListItems = this.state.showEvents.map((event, index) => (
+            <ListItem key={event.text + event.calendarId}>
+                <ListItemText
+                    primary={event.text}
+                    secondary={event.calendarId}
+                />
+            </ListItem>
+        ));
+        return <List>{eventListItems}</List>;
+    }
+
     render() {
         const theItems = this.state.cals.map((cal, index) => (
             <FormControlLabel
@@ -302,7 +301,6 @@ export default class OrgDash extends React.Component {
                 control={
                     <Switch
                         id={cal.id}
-                        // onChange={this.onChange.bind(this, index)}
                         onChange={e => this.onChange(e)}
                         label={cal.label}
                     />
@@ -331,7 +329,6 @@ export default class OrgDash extends React.Component {
                                     </FormGroup>
                                 </div>
                                 <div>
-                                    {/* <View> */}
                                     <FullCalendar
                                         data={this.state.events}
                                         style={{
@@ -343,8 +340,8 @@ export default class OrgDash extends React.Component {
                                         onSelect={onSelect => {
                                             this.changeDate(onSelect);
                                         }}
+                                        renderFooter={this.sideBar}
                                     />
-                                    {/* </View> */}
                                 </div>
                             </div>
                         </div>
