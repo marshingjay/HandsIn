@@ -142,8 +142,6 @@ exports.ROUTE_NAME_REGEX = /^static[/\\][^/\\]+[/\\]pages[/\\](.*)\.js$/;
 exports.SERVERLESS_ROUTE_NAME_REGEX = /^pages[/\\](.*)\.js$/;
 exports.TEMPORARY_REDIRECT_STATUS = 307;
 exports.PERMANENT_REDIRECT_STATUS = 308;
-exports.STATIC_PROPS_ID = '__N_SSG';
-exports.SERVER_PROPS_ID = '__N_SSP';
 
 /***/ }),
 
@@ -336,29 +334,6 @@ function cleanAmpPath(pathname) {
     return pathname;
 }
 exports.cleanAmpPath = cleanAmpPath;
-function collectEnv(page, env, pageEnv) {
-    const missingEnvKeys = new Set();
-    const collected = pageEnv
-        ? pageEnv.reduce((prev, key) => {
-            if (typeof env[key] !== 'undefined') {
-                prev[key] = env[key];
-            }
-            else {
-                missingEnvKeys.add(key);
-            }
-            return prev;
-        }, {})
-        : {};
-    if (missingEnvKeys.size > 0) {
-        console.warn(`Missing env value${missingEnvKeys.size === 1 ? '' : 's'}: ${[
-            ...missingEnvKeys,
-        ].join(', ')} for ${page}.\n` +
-            `Make sure to supply this value in either your .env file or in your environment.\n` +
-            `See here for more info: https://err.sh/next.js/missing-env-value`);
-    }
-    return collected;
-}
-exports.collectEnv = collectEnv;
 
 
 /***/ }),
@@ -478,6 +453,10 @@ function getOptionalModernScriptVariant(path) {
 
   return path;
 }
+
+function isLowPriority(file) {
+  return file.includes('_buildManifest');
+}
 /**
 * `Document` component handles the initial `document` markup and renders only on the server side.
 * Commonly used for implementing server side rendering for `css-in-js` libraries.
@@ -573,9 +552,6 @@ class Head extends _react.Component {
       assetPrefix,
       files
     } = this.context._documentProps;
-    const {
-      _devOnlyInvalidateCacheQueryString
-    } = this.context;
     const cssFiles = files && files.length ? files.filter(f => /\.css$/.test(f)) : [];
     const cssLinkElements = [];
     cssFiles.forEach(file => {
@@ -583,14 +559,14 @@ class Head extends _react.Component {
         key: `${file}-preload`,
         nonce: this.props.nonce,
         rel: "preload",
-        href: `${assetPrefix}/_next/${encodeURI(file)}${_devOnlyInvalidateCacheQueryString}`,
+        href: `${assetPrefix}/_next/${encodeURI(file)}`,
         as: "style",
         crossOrigin: this.props.crossOrigin || undefined
       }), _react.default.createElement("link", {
         key: file,
         nonce: this.props.nonce,
         rel: "stylesheet",
-        href: `${assetPrefix}/_next/${encodeURI(file)}${_devOnlyInvalidateCacheQueryString}`,
+        href: `${assetPrefix}/_next/${encodeURI(file)}`,
         crossOrigin: this.props.crossOrigin || undefined
       }));
     });
@@ -637,7 +613,10 @@ class Head extends _react.Component {
       // `dynamicImports` will contain both `.js` and `.module.js` when
       // the feature is enabled. This clause will filter down to the
       // modern variants only.
-      return file.endsWith(getOptionalModernScriptVariant('.js'));
+      //
+      // Also filter out low priority files because they should not be
+      // preloaded for performance reasons.
+      return file.endsWith(getOptionalModernScriptVariant('.js')) && !isLowPriority(file);
     }) : [];
     return preloadFiles.length === 0 ? null : preloadFiles.map(file => {
       return _react.default.createElement("link", {
@@ -885,14 +864,18 @@ class NextScript extends _react.Component {
   getScripts() {
     const {
       assetPrefix,
-      files,
-      lowPriorityFiles
+      files
     } = this.context._documentProps;
+
+    if (!files || files.length === 0) {
+      return null;
+    }
+
     const {
       _devOnlyInvalidateCacheQueryString
     } = this.context;
-    const normalScripts = files === null || files === void 0 ? void 0 : files.filter(file => file.endsWith('.js'));
-    const lowPriorityScripts = lowPriorityFiles === null || lowPriorityFiles === void 0 ? void 0 : lowPriorityFiles.filter(file => file.endsWith('.js'));
+    const normalScripts = files.filter(file => file.endsWith('.js') && !isLowPriority(file));
+    const lowPriorityScripts = files.filter(file => file.endsWith('.js') && isLowPriority(file));
     return [...normalScripts, ...lowPriorityScripts].map(file => {
       let modernProps = {};
 

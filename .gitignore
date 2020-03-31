@@ -1,7 +1,3 @@
 .next
-<<<<<<< HEAD
-node_modules
-=======
 front/.next/static/development/pages/login.js.map
 front/node_modules/
->>>>>>> 15a949c07f9287d608a8d20fc652cdce60a029ed

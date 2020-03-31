@@ -1,42 +1,43 @@
-import Link from "next/link";
-import { GlobalContext } from "./GlobalContext";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-// import Label from 'se'
+import Link from 'next/link';
+import { GlobalContext } from './GlobalContext';
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import Label from 'se'
 
 const linkStyle = {
     marginRight: 15
-};
+}
 
 const Navigation = props => (
     <Link href={props.page}>
         <a style={linkStyle}>{props.title}</a>
     </Link>
-);
+)
+
 
 function Header() {
     const state = React.useContext(GlobalContext);
     return (
         <div>
-            <Navbar bg="dark" variant="dark">
-                <Navbar.Brand href="#home">
-                    <img
-                        alt=""
-                        src="../static/logo.PNG"
-                        width="30"
-                        height="30"
-                        className="d-inline-block align-top"
-                    />{" "}
-                    HandsIn
-                </Navbar.Brand>
-                <Nav className="mr-auto">
-                    <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href={state.page}>Dashboard</Nav.Link>
-                    <Nav.Link href="/opps">Opportunities</Nav.Link>
-                    <Nav.Link href="/login">Login</Nav.Link>
-                    <Nav.Link href="/aboutus">About Us</Nav.Link>
-                </Nav>
-            </Navbar>
+        <Navbar bg="dark" variant="dark">
+            <Navbar.Brand href="#home">
+            <img
+                alt=""
+                src="../static/logo.PNG"
+                width="30"
+                height="30"
+                className="d-inline-block align-top"
+            />{' '}
+            HandsIn
+            </Navbar.Brand>
+            <Nav className="mr-auto">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href={state.page}>Dashboard</Nav.Link>
+            <Nav.Link href="/opps">Opportunities</Nav.Link>
+            <Nav.Link href="/login">Login</Nav.Link>
+            <Nav.Link href="/aboutus">About Us</Nav.Link>
+            </Nav>
+        </Navbar>
         </div>
         // <div style = {{width:"110%"}}>
         //     <title>HandsIn</title>
@@ -84,7 +85,7 @@ function Header() {
         //         </ToolBar>
         //     </AppBar>
         // </div>
-    );
+    )
 }
 
 export default Header;
