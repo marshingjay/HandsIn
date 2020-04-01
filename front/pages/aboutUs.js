@@ -1,6 +1,5 @@
 import Layout from '../components/TheLayout';
 import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
 import Typography from '@material-ui/core/Typography';
 import GridCard from '../components/GridCard_2'
 import CardDeck from 'react-bootstrap/CardDeck'
@@ -10,7 +9,7 @@ export default function Creators() {
     // const classes = useStyles();
     return (
         <Layout>
-              <Jumbotron style={{backgroundImage: "../static/clare.jpeg"}}>
+              <Jumbotron>
                 <h1 align="center">About HandsIn</h1>
                 <h6 align="center">
                 <Typography variant="h6" style={{marginLeft: '25px', marginRight: '25px'}} textalign = 'center'>
@@ -20,11 +19,6 @@ export default function Creators() {
                       </Typography>
                  </h6>
                 </Jumbotron >
-          <Grid container spacing={3}>
-          <Grid item xs={12}>
-            
-          </Grid>
-          </Grid>
           <span>&nbsp;&nbsp;</span> 
           <span>&nbsp;&nbsp;</span> 
 
