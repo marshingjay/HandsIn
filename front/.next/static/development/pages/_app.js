@@ -17,7 +17,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _this = undefined,
-    _jsxFileName = "/Users/chillcilantro/Documents/KU_Year_4/Senior_Design/src_2/front/components/GlobalContext.js";
+    _jsxFileName = "/Users/claremeyer/Documents/spring_senior/senior_design/handsIn/front/components/GlobalContext.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
@@ -749,7 +749,7 @@ if (typeof content === 'string') {
 
 var options = {}
 
-options.insert = function (element){// These elements should always exist. If they do not,
+options.insert = function(element){// These elements should always exist. If they do not,
 // this code should fail.
 var anchorElement=document.querySelector('#__next_css__DO_NOT_USE__');var parentNode=anchorElement.parentNode;// Normally <head>
 // Each style tag should be placed right before our
@@ -810,7 +810,7 @@ if (typeof content === 'string') {
 
 var options = {}
 
-options.insert = function (element){// These elements should always exist. If they do not,
+options.insert = function(element){// These elements should always exist. If they do not,
 // this code should fail.
 var anchorElement=document.querySelector('#__next_css__DO_NOT_USE__');var parentNode=anchorElement.parentNode;// Normally <head>
 // Each style tag should be placed right before our
@@ -2894,7 +2894,7 @@ if (typeof content === 'string') {
 
 var options = {}
 
-options.insert = function (element){// These elements should always exist. If they do not,
+options.insert = function(element){// These elements should always exist. If they do not,
 // this code should fail.
 var anchorElement=document.querySelector('#__next_css__DO_NOT_USE__');var parentNode=anchorElement.parentNode;// Normally <head>
 // Each style tag should be placed right before our
@@ -3198,12 +3198,12 @@ if (false) {} else {
 
 /***/ "./node_modules/react/index.js":
 /*!*******************************************************************************************!*\
-  !*** delegated ./node_modules/react/index.js from dll-reference dll_1930e30e75f4e429231a ***!
+  !*** delegated ./node_modules/react/index.js from dll-reference dll_c0e8feeed3e16fa0fa8d ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_1930e30e75f4e429231a */ "dll-reference dll_1930e30e75f4e429231a"))("./node_modules/react/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_c0e8feeed3e16fa0fa8d */ "dll-reference dll_c0e8feeed3e16fa0fa8d"))("./node_modules/react/index.js");
 
 /***/ }),
 
@@ -4269,7 +4269,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/chillcilantro/Documents/KU_Year_4/Senior_Design/src_2/front/pages/_app.js";
+var _jsxFileName = "/Users/claremeyer/Documents/spring_senior/senior_design/handsIn/front/pages/_app.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 function _createSuper(Derived) { return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, result); }; }
@@ -4334,19 +4334,19 @@ var MyApp = /*#__PURE__*/function (_App) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! next-client-pages-loader?page=%2F_app&absolutePagePath=private-next-pages%2F_app.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F_app&absolutePagePath=private-next-pages%2F_app.js!./");
-module.exports = __webpack_require__(/*! /Users/chillcilantro/Documents/KU_Year_4/Senior_Design/src_2/front/node_modules/next/dist/client/router.js */"./node_modules/next/dist/client/router.js");
+module.exports = __webpack_require__(/*! /Users/claremeyer/Documents/spring_senior/senior_design/handsIn/front/node_modules/next/dist/client/router.js */"./node_modules/next/dist/client/router.js");
 
 
 /***/ }),
 
-/***/ "dll-reference dll_1930e30e75f4e429231a":
+/***/ "dll-reference dll_c0e8feeed3e16fa0fa8d":
 /*!*******************************************!*\
-  !*** external "dll_1930e30e75f4e429231a" ***!
+  !*** external "dll_c0e8feeed3e16fa0fa8d" ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = dll_1930e30e75f4e429231a;
+module.exports = dll_c0e8feeed3e16fa0fa8d;
 
 /***/ })
 

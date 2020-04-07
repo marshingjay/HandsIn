@@ -10,7 +10,7 @@ class MyApp extends App {
         const { Component, pageProps } = this.props;
         return (
             <GlobalProvider value={this.state}>
-                <Component {...pageProps} />
+                <Component {...pageProps}/>
             </GlobalProvider>
         );
     }

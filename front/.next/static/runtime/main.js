@@ -941,7 +941,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      (0, _sourceMapSupport.rewriteStacktrace)(error, "/Users/chillcilantro/Documents/KU_Year_4/Senior_Design/src_2/front/.next");
+      (0, _sourceMapSupport.rewriteStacktrace)(error, "/Users/claremeyer/Documents/spring_senior/senior_design/handsIn/front/.next");
       return error;
     }
   };
@@ -5743,12 +5743,12 @@ exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "./node
 
 /***/ "./node_modules/react-dom/index.js":
 /*!***********************************************************************************************!*\
-  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_1930e30e75f4e429231a ***!
+  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_c0e8feeed3e16fa0fa8d ***!
   \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_1930e30e75f4e429231a */ "dll-reference dll_1930e30e75f4e429231a"))("./node_modules/react-dom/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_c0e8feeed3e16fa0fa8d */ "dll-reference dll_c0e8feeed3e16fa0fa8d"))("./node_modules/react-dom/index.js");
 
 /***/ }),
 
@@ -6022,12 +6022,12 @@ if (false) {} else {
 
 /***/ "./node_modules/react/index.js":
 /*!*******************************************************************************************!*\
-  !*** delegated ./node_modules/react/index.js from dll-reference dll_1930e30e75f4e429231a ***!
+  !*** delegated ./node_modules/react/index.js from dll-reference dll_c0e8feeed3e16fa0fa8d ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_1930e30e75f4e429231a */ "dll-reference dll_1930e30e75f4e429231a"))("./node_modules/react/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_c0e8feeed3e16fa0fa8d */ "dll-reference dll_c0e8feeed3e16fa0fa8d"))("./node_modules/react/index.js");
 
 /***/ }),
 
@@ -6809,14 +6809,14 @@ module.exports = function (options) {
 
 /***/ }),
 
-/***/ "dll-reference dll_1930e30e75f4e429231a":
+/***/ "dll-reference dll_c0e8feeed3e16fa0fa8d":
 /*!*******************************************!*\
-  !*** external "dll_1930e30e75f4e429231a" ***!
+  !*** external "dll_c0e8feeed3e16fa0fa8d" ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = dll_1930e30e75f4e429231a;
+module.exports = dll_c0e8feeed3e16fa0fa8d;
 
 /***/ })
 
