@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { GlobalContext } from "./GlobalContext";
+import { GlobalConsumer } from "./GlobalContext";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 // import Label from 'se'
@@ -15,29 +15,64 @@ const Navigation = props => (
 );
 
 function Header() {
-    const state = React.useContext(GlobalContext);
+    // const state = React.useContext(GlobalContext);
     return (
-        <div>
-            <Navbar bg="dark" variant="dark">
-                <Navbar.Brand href="#home">
-                    <img
-                        alt=""
-                        src="../static/logo.PNG"
-                        width="30"
-                        height="30"
-                        className="d-inline-block align-top"
-                    />{" "}
-                    HandsIn
-                </Navbar.Brand>
-                <Nav className="mr-auto">
-                    <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href={state.page}>Dashboard</Nav.Link>
-                    <Nav.Link href="/opps">Opportunities</Nav.Link>
-                    <Nav.Link href="/login">Login</Nav.Link>
-                    <Nav.Link href="/aboutus">About Us</Nav.Link>
-                </Nav>
-            </Navbar>
-        </div>
+    <GlobalConsumer>
+        {context => (
+            <div>
+                <Navbar bg="dark" variant="dark">
+                    <Navbar.Brand href="#home">
+                        <img
+                            alt=""
+                            src="../static/logo.PNG"
+                            width="30"
+                            height="30"
+                            className="d-inline-block align-top"
+                        />{" "}
+                        HandsIn
+                    </Navbar.Brand>
+                    <Nav className="mr-auto">
+                        <Nav.Link href="/">Home</Nav.Link>
+                        <Nav.Link href={context.page}>Dashboard</Nav.Link>
+                        <Nav.Link href="/opps">Opportunities</Nav.Link>
+                        <Nav.Link href="/login">Login</Nav.Link>
+                        <Nav.Link href="/aboutus">About Us</Nav.Link>
+                        {/* <Link href={{pathname: "/"}}><a title="Home">Home</a></Link>
+                        <Link href={context.page}><a>Dashboard</a></Link>
+                        <Link href={{pathname: "/opps"}}><a>Opportunities</a></Link>
+                        <Link href={{pathname: "/login"}}><a>Login</a></Link>
+                        <Link href={{pathname: "/aboutus"}}><a>About Us</a></Link> */}
+                    </Nav>
+                </Navbar>
+            </div>
+        )}
+    </GlobalConsumer>
+    // return (
+    //     <div>
+    //         <Navbar bg="dark" variant="dark">
+    //             <Navbar.Brand href="#home">
+    //                 <img
+    //                     alt=""
+    //                     src="../static/logo.PNG"
+    //                     width="30"
+    //                     height="30"
+    //                     className="d-inline-block align-top"
+    //                 />{" "}
+    //                 HandsIn
+    //             </Navbar.Brand>
+    //             <Nav className="mr-auto">
+    //                 <Nav.Link href="/">Home</Nav.Link>
+    //                 <Nav.Link href={this.context.page}>Dashboard</Nav.Link>
+    //                 <Nav.Link href="/opps">Opportunities</Nav.Link>
+    //                 <Nav.Link href="/login">Login</Nav.Link>
+    //                 <Nav.Link href="/aboutus">About Us</Nav.Link>
+    //             </Nav>
+    //         </Navbar>
+    //     </div>
+
+
+
+
         // <div style = {{width:"110%"}}>
         //     <title>HandsIn</title>
         //     <AppBar position="static">

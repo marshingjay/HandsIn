@@ -97,45 +97,224 @@ module.exports =
 /*!*************************************!*\
   !*** ./components/GlobalContext.js ***!
   \*************************************/
-/*! exports provided: GlobalContext, GlobalProvider */
+/*! exports provided: GlobalProvider, GlobalConsumer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GlobalContext", function() { return GlobalContext; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GlobalProvider", function() { return GlobalProvider; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GlobalConsumer", function() { return GlobalConsumer; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/Users/chillcilantro/Documents/KU_Year_4/Senior_Design/src_2/front/components/GlobalContext.js";
+/* harmony import */ var local_storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! local-storage */ "local-storage");
+/* harmony import */ var local_storage__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(local_storage__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/claremeyer/Documents/spring_senior/senior_design/handsIn/front/components/GlobalContext.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
-const defaultState = {
+
+var localIsLoggedIn = local_storage__WEBPACK_IMPORTED_MODULE_1___default.a.get('isLoggedIn') || false;
+var localType = local_storage__WEBPACK_IMPORTED_MODULE_1___default.a.get('type') || "/orgDash";
+var localPage = local_storage__WEBPACK_IMPORTED_MODULE_1___default.a.get('page') || "/login";
+var localEmail = local_storage__WEBPACK_IMPORTED_MODULE_1___default.a.get('email') || "";
+var localPassword = local_storage__WEBPACK_IMPORTED_MODULE_1___default.a.get('password') || "";
+console.log("local log", localIsLoggedIn);
+const GlobalContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])({
   isLoggedIn: false,
-  type: "\orgDash",
-  page: "\login"
-};
-const GlobalContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext(_objectSpread({}, defaultState));
+  updateIsLoggedIn: () => {},
+  type: "/orgDash",
+  updateType: () => {},
+  page: "/login",
+  updatePage: () => {},
+  email: "",
+  updateEmail: () => {},
+  password: "",
+  updatePassword: () => {}
+});
+class GlobalProvider extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor() {
+    super();
 
-const GlobalProvider = props => {
-  return __jsx(GlobalContext.Provider, {
-    value: defaultState,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14,
-      columnNumber: 9
-    }
-  }, props.children);
-};
+    _defineProperty(this, "updateIsLoggedIn", newIsLoggedIn => {
+      this.setState({
+        isLoggedIn: newIsLoggedIn
+      });
+    });
 
+    _defineProperty(this, "updateType", newType => {
+      this.setState({
+        type: newType
+      });
+    });
 
+    _defineProperty(this, "updatePage", newPage => {
+      this.setState({
+        page: newPage
+      });
+    });
+
+    _defineProperty(this, "updateEmail", newEmail => {
+      this.setState({
+        email: newEmail
+      });
+    });
+
+    _defineProperty(this, "updatePassword", newPassword => {
+      this.setState({
+        password: newPassword
+      });
+    });
+
+    this.state = {
+      isLoggedIn: false,
+      updateIsLoggedIn: this.updateIsLoggedIn,
+      type: localType,
+      updateType: this.updateType,
+      page: localPage,
+      updatePage: this.updatePage,
+      email: localEmail,
+      updateEmail: this.updateEmail,
+      password: localPassword,
+      updatePassword: this.updatePassword
+    };
+  }
+
+  render() {
+    return __jsx(GlobalContext.Provider, {
+      value: this.state,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 61,
+        columnNumber: 13
+      }
+    }, this.props.children);
+  }
+
+}
+const GlobalConsumer = GlobalContext.Consumer; // import React, { useReducer, createContext } from 'react';
+// // import Reducer from './Reducer';
+// export const GlobalContext = createContext();
+// const defaultState = {
+//     isLoggedIn: false,
+//     type: "/orgDash",
+//     page: "/login",
+//     email: "",
+//     password: "",
+//     acctType: "/orgDash"
+// };
+// const reducer = (state, action) => {
+//     switch (action.type) {
+//         case "LOGIN_STATE":
+//             return {
+//                 isLoggedIn: !state.isLoggedIn,
+//                 type: state.type,
+//                 page: state.page,
+//                 email: state.email,
+//                 password: state.password,
+//                 acctType: state.acctType
+//             };
+//         case "CHANGE_TYPE":
+//             return {
+//                 isLoggedIn: state.isLoggedIn,
+//                 type: action.payload,
+//                 page: state.page,
+//                 email: state.email,
+//                 password: state.password,
+//                 acctType: state.acctType
+//             };
+//         case "CHANGE_PAGE":
+//             return {
+//                 isLoggedIn: state.isLoggedIn,
+//                 type: state.type,
+//                 page: action.payload,
+//                 email: state.email,
+//                 password: state.password,
+//                 acctType: state.acctType
+//             };
+//         case "CHANGE_EMAIL":
+//             return {
+//                 isLoggedIn: state.isLoggedIn,
+//                 type: state.type,
+//                 page: state.page,
+//                 email: action.payload,
+//                 password: state.password,
+//                 acctType: state.acctType
+//             };
+//         case "CHANGE_PASSWORD":
+//             return {
+//                 isLoggedIn: state.isLoggedIn,
+//                 type: state.type,
+//                 page: state.page,
+//                 email: state.email,
+//                 password: action.payload,
+//                 acctType: state.acctType
+//             };  
+//         case "CHANGE_ACCTTYPE":
+//             return {
+//                 isLoggedIn: state.isLoggedIn,
+//                 type: state.type,
+//                 page: state.page,
+//                 email: state.email,
+//                 password: state.password,
+//                 acctType: action.payload
+//             }; 
+//         default: 
+//             throw new Error();
+//     }
+// };
+// export const GlobalProvider = props => {
+//     const [state, dispatch] = useReducer(reducer, defaultState);
+//     return (
+//         <GlobalContext.Provider value={[state, dispatch]}>
+//             {props.children}
+//         </GlobalContext.Provider>
+//     )
+// };
+// const GlobalContext = React.createContext({});
+// const Store = ({children}) => {
+//     const [email, setEmail] = useState("");
+//     const [password, setPassword] = useState("");
+//     const [acctType, setAcctType] = useState("");
+//     const [page, setPage] = useState("");
+//     const [isLoggedIn, setIsLoggedIn] = useState("");   
+//     return (
+//         <GlobalContext.Provider value={store}>
+//             {children}
+//         </GlobalContext.Provider>
+//     )
+// };
+// export const GlobalContext = createContext(defaultState);
+// export default Store;
+// const GlobalProvider = (props) => {
+//     // let initialState = {
+//     //     email: "",
+//     //     password: "",
+//     //     acctType: "",
+//     //     page: "",
+//     //     isLoggedIn: false
+//     // }
+//     const [email, setEmail] = useState("");
+//     const [password, setPassword] = useState("");
+//     const [acctType, setAcctType] = useState("");
+//     const [page, setPage] = useState("");
+//     const [isLoggedIn, setIsLoggedIn] = useState("");
+//     const store = {
+//         email: { get: email, set: setEmail},
+//         password: { get: password, set: setPassword},
+//         acctType: { get: acctType, set: setAcctType},
+//         page: { get: page, set: setPage},
+//         isLoggedIn: { get: isLoggedIn, set: setIsLoggedIn}
+//     }
+//     return (
+//         <GlobalContext.Provider value={store}>
+//             {props.children}
+//         </GlobalContext.Provider>
+//     );
+// };
+// export {GlobalContext, GlobalProvider};
 
 /***/ }),
 
@@ -492,10 +671,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rc_calendar_assets_index_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(rc_calendar_assets_index_css__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
 /* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "/Users/chillcilantro/Documents/KU_Year_4/Senior_Design/src_2/front/pages/_app.js";
+/* harmony import */ var material_ui_styles_getMuiTheme__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! material-ui/styles/getMuiTheme */ "material-ui/styles/getMuiTheme");
+/* harmony import */ var material_ui_styles_getMuiTheme__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(material_ui_styles_getMuiTheme__WEBPACK_IMPORTED_MODULE_6__);
+var _jsxFileName = "/Users/claremeyer/Documents/spring_senior/senior_design/handsIn/front/pages/_app.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -505,24 +689,45 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 
 class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
+  constructor(props) {
+    super(props);
+
+    _defineProperty(this, "updateValue", (key, val) => {
+      this.setState({
+        [key]: val
+      });
+    });
+
+    this.state = {
+      isLoggedIn: false,
+      type: "/orgDash",
+      page: "/login",
+      email: "",
+      password: ""
+    };
+  }
+
   render() {
     const {
       Component,
       pageProps
     } = this.props;
     return __jsx(_components_GlobalContext__WEBPACK_IMPORTED_MODULE_2__["GlobalProvider"], {
-      value: this.state,
+      value: {
+        state: this.state,
+        updateValue: this.updateValue
+      },
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12,
+        lineNumber: 28,
         columnNumber: 13
       }
     }, __jsx(Component, _extends({}, pageProps, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 13,
+        lineNumber: 29,
         columnNumber: 17
       }
     })));
@@ -543,6 +748,28 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
 
 module.exports = __webpack_require__(/*! private-next-pages/_app.js */"./pages/_app.js");
 
+
+/***/ }),
+
+/***/ "local-storage":
+/*!********************************!*\
+  !*** external "local-storage" ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("local-storage");
+
+/***/ }),
+
+/***/ "material-ui/styles/getMuiTheme":
+/*!*************************************************!*\
+  !*** external "material-ui/styles/getMuiTheme" ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("material-ui/styles/getMuiTheme");
 
 /***/ }),
 
