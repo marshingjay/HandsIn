@@ -2,7 +2,6 @@ import Link from "next/link";
 import { GlobalContext } from "./GlobalContext";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-// import Label from 'se'
 
 const linkStyle = {
     marginRight: 15
@@ -30,11 +29,31 @@ function Header() {
                     HandsIn
                 </Navbar.Brand>
                 <Nav className="mr-auto">
-                    <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href={state.page}>Dashboard</Nav.Link>
-                    <Nav.Link href="/opps">Opportunities</Nav.Link>
-                    <Nav.Link href="/login">Login</Nav.Link>
-                    <Nav.Link href="/aboutus">About Us</Nav.Link>
+                    <Link href="/" passHref>
+                    <Nav.Link>Home</Nav.Link>
+                    </Link>
+                    {/* <Nav.Link href="/">Home</Nav.Link> */}
+                    
+                    <Link href={state.page} passHref>
+                    <Nav.Link>Dashboard</Nav.Link>
+                    </Link>
+                    {/* <Nav.Link href={state.page}>Dashboard</Nav.Link> */}
+                    
+                    <Link href="/opps" passHref>
+                    <Nav.Link>Opportunities</Nav.Link>
+                    </Link>
+                    {/* <Nav.Link href="/opps">Opportunities</Nav.Link> */}
+                    
+                    <Link href="/login" passHref>
+                    <Nav.Link>Login</Nav.Link>
+                    </Link>
+                    {/* <Nav.Link href="/login">Login</Nav.Link> */}
+                    
+                    <Link href="/aboutus" passHref>
+                    <Nav.Link>About Us</Nav.Link>
+                    </Link>
+                    {/* <Nav.Link href="/aboutus">About Us</Nav.Link> */}
+
                 </Nav>
             </Navbar>
         </div>
