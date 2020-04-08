@@ -81,3 +81,15 @@ async function getDBdata(params){
     });
     return await my_data.promise();
 };
+
+export async function setDBdata(params){
+    let my_data = await docClient.update(params, function(err, data) {
+        if(err){
+            console.log('error updating db data');
+        }
+        else{
+            console.log('data updated succesfully')
+        }
+    });
+    return await my_data.promise();
+}
