@@ -5,7 +5,7 @@ import * as db from '../db.js'
 export default async (req, res) => {
     const {
       query: { db_get },
-    } = req
+    } = req;
     let my_query = `${db_get}`;
     let my_type = my_query.split("=")[0];
     let my_item = my_query.split("=")[1];
