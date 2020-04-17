@@ -20,11 +20,11 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
-    "/aboutus": [
+    "/login": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/orgDash": [
+    "/userDash": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
