@@ -27,11 +27,11 @@ class VolunteerProfile extends Component {
                     <Grid item xs='3'>
                         <Paper>
                             <h2>test</h2>
-                            {/* <ProfilePicture 
+                            <ProfilePicture 
                                 editing={this.state.editing}
                                 height='90px'
                                 width='90px'
-                            /> */}
+                            />
                         </Paper>
                     </Grid>
                     <Grid item xs='3'>
