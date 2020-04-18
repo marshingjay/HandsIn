@@ -20,12 +20,12 @@ const ProfilePicture = (props) => {
 
     return (
         <div 
-            style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center"
-            }}
+            // style={{
+            //     display: "flex",
+            //     flexDirection: "column",
+            //     alignItems: "center",
+            //     justifyContent: "center"
+            // }}
         >
             <input 
                 type="file" 

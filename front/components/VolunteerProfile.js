@@ -3,6 +3,8 @@ import TextBox from './TextBox';
 import { Component } from 'react';
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
+import Container from "@material-ui/core/Container";
+
 
 class VolunteerProfile extends Component {
     constructor(props){
@@ -20,18 +22,19 @@ class VolunteerProfile extends Component {
 
     render(){
         return (
-            <div>
-                <Grid container direction="column" justify="left">
-                    <Grid item sm='12'>
+            <Container>
+                <Grid containter direction="row" spacing={3}>
+                    <Grid item xs='3'>
                         <Paper>
-                            <ProfilePicture 
+                            <h2>test</h2>
+                            {/* <ProfilePicture 
                                 editing={this.state.editing}
-                                height='20%'
-                                width='20%'
-                            />
+                                height='90px'
+                                width='90px'
+                            /> */}
                         </Paper>
                     </Grid>
-                    <Grid item sm='12'>
+                    <Grid item xs='3'>
                         <Paper>
                             <TextBox 
                                 className="summaryBox"
@@ -41,7 +44,7 @@ class VolunteerProfile extends Component {
                             />
                         </Paper>
                     </Grid>
-                    <Grid item sm='12'>
+                    <Grid item xs='3'>
                         <Paper>
                             <button 
                                 onClick={() => {
@@ -53,7 +56,7 @@ class VolunteerProfile extends Component {
                         </Paper>
                     </Grid>
                 </Grid>
-            </div>
+            </Container>
         );
     }
 }

@@ -57,15 +57,11 @@ function DashSetup(props) {
 
     return (
         <div className={classes.root}>
-            {/* <Grid container spacing={3} justify="center" alignContent='stretch'> */}
             <Container maxWidth="xl">
                 <Grid container direction='row'>
-                {/* <Paper className={classes.paper}> */}
                 <Grid item style={{backgroundColor: '#F1F1F1', width: '75%', padding: '2%'}}>
-                    {/* <Calendar /> */}
                     <GetComp num={selectedIndex} />
                 </Grid>
-                    {/* <Calendar /> */}
                     <Grid item sm={3} alignContent="right">
                         <Paper elevation={3} style={{margin: '8%'}}>
                             <List component="nav">
@@ -123,8 +119,6 @@ function DashSetup(props) {
 
                         </Paper>
                     </Grid>
-                {/* </Paper> */}
-
                 </Grid>
             </Container>
         </div>
