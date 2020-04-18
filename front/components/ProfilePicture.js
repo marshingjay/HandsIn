@@ -15,7 +15,7 @@ const ProfilePicture = (props) => {
                 current.src = e.target.result;
             }
             fileReader.readAsDataURL(file);
-        }
+        } 
     };
 
     return (
@@ -48,6 +48,7 @@ const ProfilePicture = (props) => {
                 })()}
                 <img 
                     ref={imageUploaded}
+                    src={'/static/defaultProfilePic.jpg'}
                     style={{
                         width: props.height,
                         height: props.width,
