@@ -100,7 +100,10 @@ function Header() {
                         {/* <Nav.Link href="/aboutus">About Us</Nav.Link> */}
                     
                         <Nav.Link>Welcome, { GlobalContext.username }!</Nav.Link>
-    
+
+                        <Link href="/login" passHref>
+                        <Nav.Link onClick={() => GlobalContext.username = undefined} >Logout</Nav.Link>
+                        </Link>
                     </Nav>
                 </Navbar>
             </div>
