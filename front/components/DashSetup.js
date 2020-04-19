@@ -13,6 +13,8 @@ import StarsIcon from "@material-ui/icons/Stars";
 import SettingsIcon from "@material-ui/icons/Settings";
 import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
 import Container from "@material-ui/core/Container";
+import OrgRating from "./OrgRating";
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -38,7 +40,7 @@ function GetComp(props) {
     } else if(props.num == 2){
         return <SupervisedUserCircleIcon/>
     } else if(props.num == 3){
-        return <StarsIcon/>
+        return <OrgRating/>
     } else {
         return <SettingsIcon/>
     }
