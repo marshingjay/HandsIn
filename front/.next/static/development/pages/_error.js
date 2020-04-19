@@ -826,11 +826,24 @@ module.exports = _typeof;
 
 /***/ "./node_modules/react/index.js":
 /*!*******************************************************************************************!*\
+<<<<<<< HEAD
+  !*** delegated ./node_modules/react/index.js from dll-reference dll_c0e8feeed3e16fa0fa8d ***!
+=======
   !*** delegated ./node_modules/react/index.js from dll-reference dll_c2e10d183b950a67d9e7 ***!
+>>>>>>> 68267481eb9188d5728a73779089b5e500ccb496
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
+module.exports = (__webpack_require__(/*! dll-reference dll_c0e8feeed3e16fa0fa8d */ "dll-reference dll_c0e8feeed3e16fa0fa8d"))("./node_modules/react/index.js");
+
+/***/ }),
+
+/***/ "dll-reference dll_c0e8feeed3e16fa0fa8d":
+/*!*******************************************!*\
+  !*** external "dll_c0e8feeed3e16fa0fa8d" ***!
+=======
 module.exports = (__webpack_require__(/*! dll-reference dll_c2e10d183b950a67d9e7 */ "dll-reference dll_c2e10d183b950a67d9e7"))("./node_modules/react/index.js");
 
 /***/ }),
@@ -838,11 +851,16 @@ module.exports = (__webpack_require__(/*! dll-reference dll_c2e10d183b950a67d9e7
 /***/ "dll-reference dll_c2e10d183b950a67d9e7":
 /*!*******************************************!*\
   !*** external "dll_c2e10d183b950a67d9e7" ***!
+>>>>>>> 68267481eb9188d5728a73779089b5e500ccb496
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
+module.exports = dll_c0e8feeed3e16fa0fa8d;
+=======
 module.exports = dll_c2e10d183b950a67d9e7;
+>>>>>>> 68267481eb9188d5728a73779089b5e500ccb496
 
 /***/ })
 

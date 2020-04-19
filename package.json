@@ -17,8 +17,21 @@
   },
   "homepage": "https://github.com/marshingjay/HandsIn#readme",
   "dependencies": {
+    "@material-ui/core": "^4.9.11",
+    "@material-ui/lab": "^4.0.0-alpha.50",
     "bootstrap": "^4.4.1",
+    "jpeg-js": "^0.3.7",
+    "material-ui-icons": "^1.0.0-beta.36",
+    "material-ui-rating": "^4.2.0",
     "react-bootstrap": "^1.0.0",
+    "react-native": "^0.62.2",
+    "react-native-elements": "^1.2.7",
+    "react-native-vector-icons": "^6.6.0",
+    "react-star-ratings": "^2.3.0",
     "styled-components": "^5.0.1"
+  },
+  "devDependencies": {
+    "file-loader": "^6.0.0",
+    "image-webpack-loader": "^6.0.0"
   }
 }

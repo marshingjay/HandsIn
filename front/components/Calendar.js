@@ -58,7 +58,7 @@ export default class Calendar extends React.Component {
     }
 
     componentDidMount() {
-        this.loadGoogleSDK();
+        // this.loadGoogleSDK();
     }
 
     // Load the SDK asynchronously
@@ -234,7 +234,6 @@ export default class Calendar extends React.Component {
 
         return (
             <div>
-                {/* <Container width='100%' justfiyContent='stretch'> */}
                 <Button
                     variant="contained"
                     onClick={(e) => this.auth(e)}
@@ -257,13 +256,6 @@ export default class Calendar extends React.Component {
                     }}
                     renderFooter={this.sideBar}
                 />
-                {/* </Container> */}
-                {/* <div className="mbsc-grid"> */}
-                {/* <Grid container spacing={2} direction="column"> */}
-                {/* <Grid item xs={12}> */}
-
-                {/* </Grid> */}
-                {/* </Grid> */}
             </div>
         );
     }

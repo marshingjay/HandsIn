@@ -13,6 +13,7 @@ import StarsIcon from "@material-ui/icons/Stars";
 import SettingsIcon from "@material-ui/icons/Settings";
 import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
 import Container from "@material-ui/core/Container";
+import VolunteerProfile from "./VolunteerProfile";
 import OrgRating from "./OrgRating";
 import AddEvent from "./AddEvent";
 
@@ -36,7 +37,7 @@ function GetComp(props) {
     if(props.num == 0){
         return <Calendar />;
     } else if(props.num == 1){
-        return <StarsIcon/>
+        return <VolunteerProfile rating={2}/>
     } else if(props.num == 2){
         return <AddEvent/>
     } else if(props.num == 3){
@@ -58,15 +59,11 @@ function DashSetup(props) {
 
     return (
         <div className={classes.root}>
-            {/* <Grid container spacing={3} justify="center" alignContent='stretch'> */}
-            <Container maxWidth="xl">
+            {/* <Container maxWidth="xl"> */}
                 <Grid container direction='row'>
-                {/* <Paper className={classes.paper}> */}
-                <Grid item style={{backgroundColor: '#F1F1F1', width: '75%', padding: '2%'}}>
-                    {/* <Calendar /> */}
+                <Grid item style={{backgroundColor: '#F1F1F1', width: '75%', padding: '2%', height: '85vh'}}>
                     <GetComp num={selectedIndex} />
                 </Grid>
-                    {/* <Calendar /> */}
                     <Grid item sm={3} alignContent="right">
                         <Paper elevation={3} style={{margin: '8%'}}>
                             <List component="nav">
@@ -124,10 +121,8 @@ function DashSetup(props) {
 
                         </Paper>
                     </Grid>
-                {/* </Paper> */}
-
                 </Grid>
-            </Container>
+            {/* </Container> */}
         </div>
     );
 }

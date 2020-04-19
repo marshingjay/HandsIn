@@ -20,7 +20,11 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
+<<<<<<< HEAD
+    "/next/dist/pages/_error": [
+=======
     "/login": [
+>>>>>>> 68267481eb9188d5728a73779089b5e500ccb496
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
