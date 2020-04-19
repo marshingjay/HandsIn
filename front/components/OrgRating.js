@@ -5,6 +5,9 @@ import Grid from "@material-ui/core/Grid";
 import StarsIcon from "@material-ui/icons/Stars";
 import Typography from '@material-ui/core/Typography';
 import Rating from '@material-ui/lab/Rating';
+import { useState } from "react";
+
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -31,6 +34,11 @@ function OrgRating() {
     let threeStarVotes = 0;
     let fourStarVotes = 0;
     let fiveStarVotes = 0;
+
+    const [submit, setSubmit] = React.useState(false);
+    const onSubmit = e => {
+        setSubmit(true);
+    };
 
     return (
         <div className={classes.root}>
@@ -108,6 +116,26 @@ function OrgRating() {
                     </Grid>
                 </Grid>
             </Paper> 
+            <Paper style={{backgroundColor: 'transparent', minWidth: "96%", maxWidth: "96%"}}>   
+                <Typography variant="h5" gutterBottom align='center'>
+                    Submit A Vote
+                </Typography>
+                <Grid container spacing={1}>
+                    <Grid item xs={12}>
+                        <Rating precision={1} style={{marginLeft: '460px', marginTop: '50px'}}/>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <button style={{marginLeft: '460px', marginTop: '10px', width:'120px'}} onClick={e => onSubmit(e)}>Submit</button>
+                    </Grid>
+                    {submit ? (
+                        <div>
+                            <Typography variant="h5" style={{marginLeft: '350px', marginTop: '20px'}}>
+                                Thank you for your submission!
+                            </Typography>
+                        </div>
+                    ) : null}
+                </Grid>
+            </Paper>
         </div>
     )
 }
