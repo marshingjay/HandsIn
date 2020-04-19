@@ -4,7 +4,8 @@ import React from 'react';
 const defaultState = {
     isLoggedIn: false,
     type: "\orgDash",
-    page: "\login"
+    page: "\login",
+    username: '\guest'
 };
 
 const GlobalContext = React.createContext({...defaultState});
