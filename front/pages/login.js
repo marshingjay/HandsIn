@@ -42,7 +42,13 @@ const Login = () => {
     const state = useContext(GlobalContext);
 
     function validate() {
-        return email.length > 0 && password.length > 0 && acctType != "";
+        if (email.length > 0 && password.length > 0 && acctType != ""){
+            GlobalContext.username = email;
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     return (
