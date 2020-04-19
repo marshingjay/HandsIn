@@ -14,6 +14,8 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
 import Container from "@material-ui/core/Container";
 import VolunteerProfile from "./VolunteerProfile";
+import OrgRating from "./OrgRating";
+import AddEvent from "./AddEvent";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -37,9 +39,9 @@ function GetComp(props) {
     } else if(props.num == 1){
         return <VolunteerProfile rating={2}/>
     } else if(props.num == 2){
-        return <SupervisedUserCircleIcon/>
+        return <AddEvent/>
     } else if(props.num == 3){
-        return <StarsIcon/>
+        return <OrgRating/>
     } else {
         return <SettingsIcon/>
     }
