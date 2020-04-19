@@ -5,7 +5,7 @@ const defaultState = {
     isLoggedIn: false,
     type: "\orgDash",
     page: "\login",
-    username: '\guest'
+    username: ''
 };
 
 const GlobalContext = React.createContext({...defaultState});

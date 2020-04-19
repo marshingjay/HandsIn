@@ -17,7 +17,7 @@ function Header() {
     const state = React.useContext(GlobalContext);
     console.log(GlobalContext.username);
     
-    if (GlobalContext.username == 'guest'){
+    if (GlobalContext.username == undefined){
         return (
             <div>
                 <Navbar bg="dark" variant="dark">
