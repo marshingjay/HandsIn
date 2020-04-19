@@ -119,7 +119,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 const defaultState = {
   isLoggedIn: false,
   type: "\orgDash",
-  page: "\login"
+  page: "\login",
+  username: ''
 };
 const GlobalContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext(_objectSpread({}, defaultState));
 
@@ -129,7 +130,7 @@ const GlobalProvider = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
+      lineNumber: 15,
       columnNumber: 9
     }
   }, props.children);
@@ -492,10 +493,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rc_calendar_assets_index_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(rc_calendar_assets_index_css__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
 /* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _styling_app_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../styling/app.css */ "./styling/app.css");
+/* harmony import */ var _styling_app_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styling_app_css__WEBPACK_IMPORTED_MODULE_6__);
 var _jsxFileName = "/Users/claremeyer/Documents/spring_senior/senior_design/handsIn/front/pages/_app.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 
 
 
@@ -515,14 +519,14 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12,
+        lineNumber: 13,
         columnNumber: 13
       }
     }, __jsx(Component, _extends({}, pageProps, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 13,
+        lineNumber: 14,
         columnNumber: 17
       }
     })));
@@ -531,6 +535,17 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (MyApp);
+
+/***/ }),
+
+/***/ "./styling/app.css":
+/*!*************************!*\
+  !*** ./styling/app.css ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
 
 /***/ }),
 
