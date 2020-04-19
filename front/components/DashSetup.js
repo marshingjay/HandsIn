@@ -35,7 +35,7 @@ function GetComp(props) {
     if(props.num == 0){
         return <Calendar />;
     } else if(props.num == 1){
-        return <VolunteerProfile />
+        return <VolunteerProfile rating={2}/>
     } else if(props.num == 2){
         return <SupervisedUserCircleIcon/>
     } else if(props.num == 3){
@@ -57,9 +57,9 @@ function DashSetup(props) {
 
     return (
         <div className={classes.root}>
-            <Container maxWidth="xl">
+            {/* <Container maxWidth="xl"> */}
                 <Grid container direction='row'>
-                <Grid item style={{backgroundColor: '#F1F1F1', width: '75%', padding: '2%'}}>
+                <Grid item style={{backgroundColor: '#F1F1F1', width: '75%', padding: '2%', height: '85vh'}}>
                     <GetComp num={selectedIndex} />
                 </Grid>
                     <Grid item sm={3} alignContent="right">
@@ -120,7 +120,7 @@ function DashSetup(props) {
                         </Paper>
                     </Grid>
                 </Grid>
-            </Container>
+            {/* </Container> */}
         </div>
     );
 }
