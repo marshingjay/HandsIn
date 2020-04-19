@@ -70,7 +70,7 @@ export function getEventByKey(key){
 }
 
 
-async function getDBdata(params){
+export async function getDBdata(params){
     let my_data = await docClient.get(params, function (err, data) {
         if (err) {
             console.log('error fetching db data');
@@ -81,3 +81,39 @@ async function getDBdata(params){
     });
     return await my_data.promise();
 };
+
+export async function setDBdata(params){
+    let my_data = await docClient.update(params, function(err, data) {
+        if(err){
+            console.log('error updating db data');
+        }
+        else{
+            console.log('data updated succesfully');
+        }
+    });
+    return await my_data.promise();
+}
+
+export async function createNewEntry(params){
+    let my_data = await docClient.put(params, function(err, data) {
+        if(err) {
+            console.log('unable to add item!');
+        }
+        else{
+            console.log('item added succesfully!');
+        }
+    });
+    return await my_data.promise();
+}
+
+export async function deleteEntry(params){
+    let my_data = await docClient.delete(params, function(err, data) {
+        if(err) {
+            console.log('unable to delete item!');
+        }
+        else{
+            console.log('item deleted succesfully');
+        }
+    });
+    return await my_data.promise();
+}
