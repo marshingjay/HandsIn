@@ -58,7 +58,7 @@ export default class Calendar extends React.Component {
     }
 
     componentDidMount() {
-        this.loadGoogleSDK();
+        // this.loadGoogleSDK();
     }
 
     // Load the SDK asynchronously

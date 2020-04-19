@@ -49,11 +49,11 @@ const ProfilePicture = (props) => {
                 <img 
                     ref={imageUploaded}
                     src={'/static/defaultProfilePic.jpg'}
-                    // style={{
-                    //     width: props.height,
-                    //     height: props.width,
-                    //     position: "absolute"
-                    // }}
+                    style={{
+                        width: props.height,
+                        height: props.width,
+                        // position: "absolute"
+                    }}
                 />
             </div>
         </div>

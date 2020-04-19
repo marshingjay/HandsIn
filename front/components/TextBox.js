@@ -2,16 +2,17 @@ const TextBox = (props) => {
     return (
         <div>
             <div>
-                <span>Summary:</span>
+                {/* <span>Summary:</span> */}
                 {props.editing ? (
-                    <input 
+                    <textInput 
                         type="text"
-                        // value={this.state.summary}
                         value={props.theText}
-                        // ref={node => {
-                        //     this.newSummary = node;
-                        // }}
                         onChange={e => props.handleTextChange(e.target.value)}
+                        style={{
+                            flex: 1,
+                            flexWrap: 'wrap'
+                        }}
+                        margin={12}
                     />
                 ) : (
                     <span className="summary">{props.theText}</span>
