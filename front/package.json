@@ -35,7 +35,8 @@
         "react-material-ui": "0.0.1",
         "react-native": "^0.62.0",
         "semantic-ui": "^2.4.2",
-        "semantic-ui-header": "^2.3.1"
+        "semantic-ui-header": "^2.3.1",
+        "swr": "^0.2.0"
     },
     "devDependencies": {
         "webpack": "^4.42.1"
