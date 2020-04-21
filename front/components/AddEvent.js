@@ -8,9 +8,9 @@ const fetcher = url => fetch(url).then(res => res.json())
 
 const updateDB = (date, event_id, event_name, description, start_time, end_time, location, max_vols, organization_id) => {
   console.log('updating');
-  const {data, error} = useSWR('../api/create/event=' + event_id);
+  const {data, error} = useSWR('../api/create/event=' + event_id, fetcher);
   if(!error){
-    const {data_2, error_2} = useSWR('../api/set/event='+event_id+',Date='+date+',StartTime='+start_time+',EndTime='+end_time+',Location='+location+',MaxVolunteers='+max_vols+'OrganizationID'+organization_id);
+    const {data_2, error_2} = useSWR('../api/set/event='+event_id+',Date='+date+',StartTime='+start_time+',EndTime='+end_time+',Location='+location+',MaxVolunteers='+max_vols+'OrganizationID'+organization_id, fetcher);
   }
 };
 
@@ -105,7 +105,7 @@ function AddEvent() {
   {/* <Form.Group id="formGridCheckbox">
     <Form.Check type="checkbox" label="Check me out" />
   </Form.Group> */}
-  <Button onClick = {() => updateDB(date, event_id, event_name, description, start_time, end_time, location, max_vols, organization_id)} variant="secondary" type="submit">
+  <Button onClick = {() => {updateDB(date, event_id, event_name, description, start_time, end_time, location, max_vols, organization_id)}} variant="secondary" type="submit">
     Submit
   </Button>
   

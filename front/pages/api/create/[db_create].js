@@ -24,5 +24,6 @@ export default async (req, res) => {
     }
     console.log(my_db_query);
     let my_returned_json = await db.createNewEntry(my_db_query);
+    console.log('item created');
     return res.status(200).json(my_returned_json);
 }
