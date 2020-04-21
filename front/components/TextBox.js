@@ -4,7 +4,7 @@ const TextBox = (props) => {
             <div>
                 {/* <span>Summary:</span> */}
                 {props.editing ? (
-                    <textInput 
+                    <input 
                         type="text"
                         value={props.theText}
                         onChange={e => props.handleTextChange(e.target.value)}

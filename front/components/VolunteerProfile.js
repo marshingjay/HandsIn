@@ -77,7 +77,7 @@ class VolunteerProfile extends Component {
                             </Paper>
                             {/* ratings */}
                             <Paper style={{height: '50%'}} style={{padding: '5%', margin: '5%'}}>
-                                <span>list to hold the ratings, need to read these in</span>
+                                <span>list to hold the ratings</span>
                             </Paper>
                             
                     </GridListTile>
